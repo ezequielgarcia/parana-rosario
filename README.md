@@ -27,14 +27,35 @@ and when?
 | | |
 |---|---|
 | Rosario now | 3.35 m (alerta 5.00, evacuación 5.30) |
-| Crest | 4.76 m, band 4.42 to 5.10 |
-| Crest date | 15 Nov, broad flat crest ~8 to 20 Nov |
-| Crosses 5.00 m | only at the upper edge of the band, around 9 Nov |
+| Crest | 4.76 ± 0.33 m (68%); 4.22 to 5.31 at 90% |
+| Crest date | 15 Nov ± 8 d, broad flat crest ~8 to 20 Nov |
+| Reaches 5.00 m | 24% chance; 5.30 m is 5% |
 
 Three independent estimators, all on 1901-2026: a two-variable peak regression
-gives 4.76 ± 0.24 m, the attenuation law gives 4.56 m, the seven base-matched
-analogues give 4.33 m. Leave-one-out over all 76 waves puts the typical error at
-0.19 m with no bias on waves of this size.
+gives 4.76 m, the attenuation law gives 4.56 m, the seven base-matched analogues
+give 4.33 m. Leave-one-out over all 76 waves puts the typical error at 0.19 m
+with no bias on waves of this size.
+
+### Error budget
+
+`scripts/error_budget.py` writes `data/error_budget.json` and prints the terms.
+One standard deviation each, combined in quadrature because they are independent:
+
+| Term | sigma |
+|---|---|
+| wave-to-wave scatter about the fit | 0.241 m |
+| uncertainty in the fitted coefficients | 0.058 m |
+| INA's own range on the Corrientes peak, through the 0.499 slope | 0.121 m |
+| starting base at Rosario | 0.021 m |
+| spread between the three estimators | 0.176 m |
+| **combined** | **0.328 m** |
+
+The regression alone gives a prediction standard error of 0.25 m, which is what
+the leave-one-out backtest reproduces (sd 0.25 m, central 90% of errors -0.28 to
++0.47 m). The backtest cannot charge for the forecast error on the upstream peak
+or for the disagreement between methods, so the published figure is wider.
+Travel time fitted against peak size gives 25 days with a residual sd of 8 days;
+the sixteen comparable waves ran from 3 to 37 days.
 
 ### Revision, 16 Oct 2026
 

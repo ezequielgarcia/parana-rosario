@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>El Paraná en Rosario: estimación de la cresta de la crecida de octubre de 2026</title>
-<meta name="description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 m hacia el 15 de noviembre de 2026.">
+<meta name="description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 ± 0,33 m hacia el 15 de noviembre de 2026.">
 <meta name="author" content="Eze Garcia">
 <meta name="robots" content="index,follow">
 <link rel="alternate" hreflang="en" href="https://ezequielgarcia.github.io/parana-rosario/">
@@ -12,11 +12,11 @@
 <link rel="alternate" hreflang="x-default" href="https://ezequielgarcia.github.io/parana-rosario/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="El Paraná en Rosario: cuándo llega la onda y hasta dónde">
-<meta property="og:description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 m hacia el 15 de noviembre de 2026.">
+<meta property="og:description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 ± 0,33 m hacia el 15 de noviembre de 2026.">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="El Paraná en Rosario: cuándo llega la onda y hasta dónde">
-<meta name="twitter:description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 m hacia el 15 de noviembre de 2026.">
+<meta name="twitter:description" content="Hasta dónde y cuándo llega a Rosario la onda de crecida que hoy pasa por Corrientes, a partir de los registros de la Prefectura Naval y del INA desde 1901. Cresta estimada en 4,76 ± 0,33 m hacia el 15 de noviembre de 2026.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230d2a3f'/%3E%3Cpath d='M3 27h26' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M3 23 L9 21.5 L14 19 L19 12 L22 7 L26 9' fill='none' stroke='%233987e5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@ header.mast{display:flex;flex-direction:column;gap:.9rem;
   text-transform:uppercase;color:var(--muted)}
 .tile .v{font-family:var(--font-data);font-size:1.95rem;font-weight:600;line-height:1;
   letter-spacing:-.025em;color:var(--ink)}
-.tile .v small{font-size:.9rem;font-weight:500;color:var(--ink-2);letter-spacing:0}
+.tile .v small{font-size:.9rem;font-weight:500;color:var(--ink-2);letter-spacing:0;white-space:nowrap}
 .tile .s{font-family:var(--font-data);font-size:.76rem;color:var(--ink-2);line-height:1.4}
 .tile.hero{background:var(--surface-2)}
 .tile.hero .v{color:var(--ros)}
@@ -157,6 +157,7 @@ td.num{font-weight:600}
   color:color-mix(in srgb,var(--alerta) 60%,var(--ink))}
 .pill.ok{background:var(--surface-2);color:var(--muted)}
 .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.bar{display:block;height:8px;border-radius:1px;min-width:2px;opacity:.85}
 
 /* method */
 .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1px;
@@ -236,18 +237,18 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
     </div>
     <div class="tile hero">
       <span class="k">Cresta estimada</span>
-      <span class="v">4,76<small> m</small></span>
-      <span class="s">Banda de 4,42 a 5,10 m. La alerta es 5,00 y la evacuación 5,30.</span>
+      <span class="v">4,76<small> ± 0,33 m</small></span>
+      <span class="s">Un desvío estándar. Nueve ondas de cada diez caen entre 4,22 y 5,31 m.</span>
     </div>
     <div class="tile">
       <span class="k">Llegada de la cresta</span>
-      <span class="v">15 nov</span>
-      <span class="s">Cresta ancha y plana, aproximadamente del 8 al 20 de noviembre.</span>
+      <span class="v">15 nov<small> ± 8 d</small></span>
+      <span class="s">Cresta ancha y plana. De todas las cifras de la página, la fecha es la menos confiable.</span>
     </div>
     <div class="tile">
       <span class="k">Alerta, 5,00 m</span>
-      <span class="v">Improbable</span>
-      <span class="s">Se alcanza solo en el borde superior de la banda, hacia el 9 de noviembre.</span>
+      <span class="v">1 en 4</span>
+      <span class="s">Probabilidad de tocar los 5,00 m en la cresta. La <em class="term">evacuación</em>, 5,30 m, es 1 en 20.</span>
     </div>
   </div>
   <p class="note">Las cifras son de este análisis y no constituyen un pronóstico oficial. El INA
@@ -303,7 +304,7 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
   <div class="legend" id="leg2"></div>
   <div class="chart"><div id="c2"></div><div class="tip" id="t2"></div></div>
   <div class="plate-foot">
-    <span>Cresta de 4,76 m el 15 de noviembre, banda de 4,42 a 5,10 m.</span>
+    <span>Cresta de 4,76 ± 0,33 m el 15 de noviembre; nueve ondas de cada diez entre 4,22 y 5,31 m.</span>
     <button class="tbl" data-target="tv2" aria-expanded="false">Ver tabla</button>
   </div>
   <div class="scroll" id="tv2" hidden></div>
@@ -448,12 +449,14 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
       0,4 m con el nivel de partida bajo que hay hoy.</p>
       <div class="formula">R_cresta = −0,27 + 0,499·C_pico + 0,414·R_base
 n = 76   desvío residual = 0,24 m
+error de predicción = 0,25 m   (residual + coeficientes)
+presupuesto completo = 0,33 m   (los cinco términos)
 error medio dejando uno afuera = 0,19 m
 desfase: mediana 27 d  (p25 23, p75 34)</div>
-      <p>Con C_pico de 7,31 m y R_base de 3,35 m resulta <b>4,76 ± 0,24 m</b>, a 26 días del
-      20 de octubre, es decir el 15 de noviembre. Reajustar el modelo dejando afuera cada onda y
-      prediciéndola después deja el error típico en 0,19 m, sin sesgo en las dieciséis ondas del
-      tamaño de esta.</p>
+      <p>Con C_pico de 7,31 m y R_base de 3,35 m resulta <b>4,76 ± 0,33 m</b>, a 26 días del
+      20 de octubre, es decir el 15 de noviembre. La regresión sola diría ± 0,25 m; la cifra más
+      ancha suma el error de pronóstico del pico en Corrientes y la discrepancia entre los tres
+      métodos. La sección de más abajo desarrolla el presupuesto término por término.</p>
     </div>
     <div class="step">
       <span class="n">TRANSFERENCIA</span>
@@ -482,6 +485,63 @@ Rosario 5,00 m  ⇔  Santa Fe 5,35 m</div>
       anterior de esta página se ajustó solo sobre 1990-2026 y publicó 5,16 m; esa muestra
       contenía sobre todo ondas que arrancaron desde una base mucho más alta, y eso la infló.</p>
     </div>
+  </div>
+</section>
+
+<section id="error">
+  <h2>Cuán ancha es la barra de error, y por qué</h2>
+  <div class="prose">
+    <p>Cada cifra de esta página es un valor central más o menos una dispersión, y esa dispersión
+    está calculada, no supuesta. La componen cinco términos. Son independientes entre sí, así que
+    se combinan como la raíz de la suma de cuadrados y no por suma directa, y por eso el total da
+    0,33 m y no los 0,62 m que saldrían de apilarlos uno detrás de otro.</p>
+    <p>Una versión anterior de esta página indicaba ± 0,24 m. Ese era solo el primer término, la
+    dispersión de las ondas pasadas alrededor de la recta ajustada. Dejaba afuera dos fuentes de
+    error reales que la regresión no puede ver: el pico en Corrientes es a su vez un pronóstico con
+    su propio rango publicado, y los tres estimadores independientes difieren en cerca de un quinto
+    de metro.</p>
+  </div>
+  <div class="scroll">
+    <table>
+      <caption>Presupuesto de error de la cresta estimada. Un desvío estándar por término,
+      combinados en cuadratura.</caption>
+      <thead><tr><th>Fuente</th><th style="text-align:left">Qué cubre</th><th style="text-transform:none;letter-spacing:0">σ</th></tr></thead>
+      <tbody id="budget"></tbody>
+    </table>
+  </div>
+  <div class="scroll">
+    <table>
+      <caption>La cresta estimada en cada nivel de confianza. La banda dibujada en la lámina 2 y
+      usada en la tabla de umbrales es la del 68 %, un desvío estándar a cada lado.</caption>
+      <thead><tr><th>Confianza</th><th style="text-align:left">Lectura</th><th>Inferior</th><th>Central</th><th>Superior</th></tr></thead>
+      <tbody id="bands"></tbody>
+    </table>
+  </div>
+  <div class="scroll">
+    <table>
+      <caption>Probabilidad de que la cresta alcance cada nivel, tomando la dispersión combinada
+      como normal. Los 76 errores de dejar uno afuera son casi simétricos y sin sesgo, que es lo que
+      habilita ese tratamiento.</caption>
+      <thead><tr><th>Nivel</th><th style="text-align:left">Qué significa</th><th>Probabilidad</th><th style="text-align:left">&nbsp;</th></tr></thead>
+      <tbody id="exceed"></tbody>
+    </table>
+  </div>
+  <div class="prose">
+    <p>Dos controles sobre la cifra. Reajustar el modelo 76 veces, dejando cada vez una onda afuera
+    y prediciéndola después, da errores con un desvío estándar de 0,25 m, sin sesgo, y un 90 %
+    central que va de −0,28 a +0,47 m. Eso es más angosto que los 0,33 m que figuran acá, y
+    corresponde que lo sea: el backtest le entrega al modelo un pico en Corrientes ya observado, no
+    pronosticado, y no puede cobrar la discrepancia entre métodos. En las dieciséis ondas del tamaño
+    de esta, el error del backtest tiene un desvío de 0,23 m y un sesgo de −0,01 m, de modo que el
+    ajuste no se equivoca de manera sistemática en las ondas grandes.</p>
+    <p>La fecha lleva su propia dispersión. El tiempo de tránsito ajustado contra el tamaño del pico
+    da 25 días desde el pico en Corrientes, con un desvío residual de 8 días, así que la fecha de
+    cresta es el <b>15 de noviembre ± 8 días</b>, y las dieciséis ondas comparables fueron de 3 a 37
+    días. Esta es la parte más débil del pronóstico, y la lámina 5 muestra por qué: la altura se
+    atenúa como una constante física, el tiempo no.</p>
+    <p class="note">Una cifra que no está en el presupuesto: una segunda onda. Todo lo de acá supone
+    la única onda que hoy está en tránsito y nada de lluvia nueva aguas arriba de Itaipú. Eso es una
+    condición, no un término de error, y ningún desvío estándar lo cubre.</p>
   </div>
 </section>
 
@@ -583,6 +643,26 @@ const PROJ = [["10-16",3.35,3.35,3.35,0],["10-17",3.36,3.45,3.56,0],["10-18",3.3
 const EVENTS = [[6.77,4.54,5.08,23,"mar 1905"],[8.57,4.88,6.24,16,"jun 1905"],[6.2,3.85,4.49,41,"feb 1908"],[7.41,4.44,5.1,17,"ene 1912"],[7.0,4.47,4.8,22,"mar 1912"],[6.11,4.29,4.46,32,"mar 1920"],[7.05,4.16,4.94,32,"feb 1921"],[6.0,2.45,3.68,20,"oct 1921"],[6.35,4.28,4.59,6,"jul 1922"],[7.29,3.41,4.37,26,"jun 1923"],[6.72,2.91,4.3,38,"feb 1926"],[6.13,3.98,4.23,31,"abr 1926"],[6.14,3.82,4.12,28,"jun 1928"],[6.42,3.23,3.86,16,"oct 1928"],[6.3,3.69,4.33,37,"feb 1930"],[7.04,4.19,4.88,35,"mar 1931"],[6.72,4.77,4.91,25,"jun 1931"],[6.56,4.29,4.7,22,"abr 1932"],[6.74,3.48,4.36,25,"oct 1935"],[6.53,1.6,3.82,17,"jun 1936"],[6.42,3.05,4.22,36,"dic 1939"],[6.76,3.96,4.43,28,"mar 1946"],[6.0,3.65,3.98,22,"jul 1946"],[6.23,4.21,4.5,25,"abr 1947"],[6.7,4.1,4.69,32,"mar 1951"],[6.37,3.86,4.3,21,"jun 1954"],[6.17,3.85,4.2,32,"jun 1956"],[6.6,4.03,4.48,27,"oct 1957"],[6.78,4.05,4.81,25,"feb 1959"],[6.94,3.91,5.02,41,"mar 1961"],[6.78,3.67,4.51,42,"mar 1965"],[6.42,4.16,4.44,24,"may 1965"],[7.93,5.23,6.06,31,"mar 1966"],[6.23,3.57,4.27,22,"oct 1972"],[6.26,4.04,4.27,25,"dic 1972"],[6.27,4.26,4.71,40,"feb 1973"],[6.34,3.57,4.4,34,"feb 1974"],[6.27,4.01,4.4,27,"abr 1974"],[7.13,4.56,5.53,20,"feb 1977"],[6.26,2.73,3.86,24,"may 1979"],[6.26,4.0,4.46,38,"nov 1979"],[6.81,4.38,4.9,24,"mar 1980"],[6.42,4.13,4.84,28,"feb 1981"],[6.42,4.23,4.52,28,"abr 1982"],[7.26,4.27,5.07,24,"jul 1982"],[7.8,4.08,5.86,26,"dic 1982"],[8.39,5.81,6.17,19,"mar 1983"],[7.13,4.32,4.88,20,"oct 1983"],[6.13,4.29,4.82,42,"ene 1984"],[7.38,4.39,5.09,26,"may 1987"],[6.04,3.15,4.32,43,"feb 1989"],[6.95,4.0,4.58,27,"sep 1989"],[7.93,3.47,5.13,22,"feb 1990"],[7.17,4.22,4.79,26,"jun 1990"],[6.51,4.12,4.8,24,"sep 1990"],[8.64,5.22,6.27,17,"jun 1992"],[6.13,4.11,4.75,30,"nov 1992"],[6.32,4.54,4.8,23,"mar 1993"],[6.49,2.64,4.64,37,"oct 1993"],[6.2,2.5,4.57,35,"oct 1996"],[7.7,4.41,5.55,29,"feb 1997"],[6.57,4.65,5.34,45,"nov 1997"],[6.22,5.38,5.44,45,"feb 1998"],[8.39,5.95,6.43,10,"may 1998"],[7.27,4.71,5.1,30,"oct 1998"],[6.13,3.9,4.31,21,"mar 2001"],[6.54,4.38,5.41,29,"mar 2007"],[6.8,5.06,5.58,30,"ene 2010"],[6.54,4.02,4.6,37,"mar 2011"],[7.22,3.41,4.62,27,"jul 2013"],[7.16,3.99,4.98,41,"jun 2014"],[6.29,3.49,4.55,23,"jul 2015"],[7.46,5.22,5.55,3,"ene 2016"],[7.32,5.19,5.35,37,"mar 2016"],[6.16,4.53,5.01,25,"jun 2017"],[6.6,3.47,4.21,30,"ene 2018"]]
   .map(e => ({c:e[0], base:e[1], r:e[2], lag:e[3], when:e[4]}));
 const FIT = {b0:-0.272, b1:0.4992, b2:0.4140, sd:0.241};
+const ERR = {
+  pred:4.76, sd:0.33,
+  terms:[
+    ['Dispersión entre ondas', 'Cuánto se apartaron de la recta ajustada las crestas pasadas con las mismas entradas', 0.241],
+    ['Coeficientes', 'El ajuste se estima sobre 76 ondas, no se conoce con exactitud', 0.058],
+    ['Pico en Corrientes', 'El rango que publica el INA para el pico de aguas arriba, de 6,75 a 7,55 m, pasado por la pendiente 0,499', 0.121],
+    ['Base de partida', 'Rosario está hoy en 3,35 m, pero la base de cinco días antes del pico todavía está por delante', 0.021],
+    ['Los métodos difieren', 'Ajuste 4,76 m, atenuación 4,56 m, análogos 4,33 m', 0.176]
+  ],
+  bands:[[68,'Un desvío estándar. La cresta cae acá dos años de cada tres',0.33],
+         [80,'Cuatro ondas de cada cinco',0.42],
+         [90,'Nueve ondas de cada diez',0.55],
+         [95,'Diecinueve de cada veinte. Más allá de esto solo llega una segunda onda',0.65]],
+  exceed:[[4.00,'Se tapan las islas bajas y los senderos costeros',99.0],
+          [4.50,'El agua llega al nivel inferior de la costanera',79.0],
+          [5.00,'Alerta',23.6],
+          [5.30,'Evacuación',5.1],
+          [6.00,'La categoría de 1992 y 1998',0.0]]
+};
+
 const R_BASE_NOW = 3.35, C_PEAK_NOW = 7.31;
 const fit = c => FIT.b0 + FIT.b1*c + FIT.b2*R_BASE_NOW;
 
@@ -920,7 +1000,7 @@ function plate3(){
     style:'stroke:var(--cor);stroke-width:2;stroke-linecap:round'}));
   svg.appendChild(mk('circle', {cx:x(C_PEAK_NOW), cy:y(py), r:6,
     style:'fill:var(--cor);stroke:var(--surface);stroke-width:2.5'}));
-  svg.appendChild(txt(x(C_PEAK_NOW) + 11, y(py) + 4, 'oct 2026 · 4,76 ± 0,24 m',
+  svg.appendChild(txt(x(C_PEAK_NOW) + 11, y(py) + 4, 'oct 2026 · 4,76 ± 0,33 m',
     {style:LB + ';fill:var(--cor)'}));
 
   box.replaceChildren(svg);
@@ -967,6 +1047,31 @@ function legends(){
     sw(' sq', 'var(--cor)') + 'Esta onda, ajustada</span>';
 }
 
+
+function errorTables(){
+  const tot = Math.sqrt(ERR.terms.reduce((s,t) => s + t[2]*t[2], 0));
+  document.getElementById('budget').innerHTML = ERR.terms.map(t =>
+    `<tr><td>${t[0]}</td><td style="text-align:left;font-variant-numeric:normal;white-space:normal">${t[1]}</td>` +
+    `<td>${F2(t[2])} m</td></tr>`).join('') +
+    `<tr class="focus"><td>Combinado</td><td style="text-align:left;font-variant-numeric:normal;white-space:normal">` +
+    `Raíz de la suma de cuadrados, por ser los cinco términos independientes</td><td class="num">${F2(tot)} m</td></tr>`;
+
+  document.getElementById('bands').innerHTML = ERR.bands.map(b =>
+    `<tr class="${b[0] === 68 ? 'focus' : ''}"><td>${b[0]} %</td>` +
+    `<td style="text-align:left;font-variant-numeric:normal;white-space:normal">${b[1]}</td>` +
+    `<td>${F2(ERR.pred - b[2])}</td><td class="num">${F2(ERR.pred)} ± ${F2(b[2])}</td>` +
+    `<td>${F2(ERR.pred + b[2])}</td></tr>`).join('');
+
+  document.getElementById('exceed').innerHTML = ERR.exceed.map(e => {
+    const col = e[0] >= 5.3 ? 'var(--evac)' : e[0] >= 5 ? 'var(--alerta)' : 'var(--ros)';
+    return `<tr class="${e[0] >= 5 ? 'focus' : ''}"><td>${F2(e[0])} m</td>` +
+      `<td style="text-align:left;font-variant-numeric:normal;white-space:normal">${e[1]}</td>` +
+      `<td class="num">${e[2] < 1 ? 'menos de 1' : F1(e[2])} %</td>` +
+      `<td style="text-align:left;width:34%"><span class="bar" style="width:${Math.max(e[2],0.6)}%;` +
+      `background:${col}" role="img" aria-label="${F1(e[2])} por ciento"></span></td></tr>`;
+  }).join('');
+}
+
 function tables(){
   document.getElementById('thr').innerHTML = THRESHOLDS.map(t =>
     `<tr class="${t.lv >= 5 ? 'focus' : ''}"><td>${n2(t.lv)} m</td><td style="text-align:left;font-variant-numeric:normal">${t.what}</td>` +
@@ -1007,7 +1112,7 @@ function tables(){
   t2.push('</tbody></table>');
   document.getElementById('tv2').innerHTML = t2.join('');
 
-  const t3 = ['<table><caption>Los 23 eventos apareados que sostienen el ajuste, del más antiguo al más reciente.</caption>' +
+  const t3 = ['<table><caption>Las 76 ondas apareadas que sostienen el ajuste, de la más antigua a la más reciente.</caption>' +
     '<thead><tr><th>Evento</th><th>Pico en Corrientes</th><th>Base en Rosario</th><th>Cresta en Rosario</th><th>Desfase</th></tr></thead><tbody>'];
   EVENTS.forEach(e => t3.push(`<tr><td>${e.when}</td><td>${n2(e.c)}</td>` +
     `<td>${n2(e.base)}</td><td class="num">${n2(e.r)}</td><td>${e.lag} d</td></tr>`));
@@ -1232,7 +1337,7 @@ const HIGHLIGHT = {};
 SHAPES.forEach(s => { HIGHLIGHT[s.date.slice(0, 7)] = s; });
 
 function drawAll(){ plate1(); plate2(); plate3(); plate4(); plate5(); }
-legends(); behaviourLegendsAndTables(); tables(); drawAll();
+legends(); behaviourLegendsAndTables(); tables(); errorTables(); drawAll();
 let rt;
 addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 140); });
 </script>
