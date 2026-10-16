@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Paraná at Rosario: crest estimate for the October 2026 flood wave</title>
-<meta name="description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
+<meta name="description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1901. Crest estimate 4.76 m around 15 November 2026.">
 <meta name="author" content="Eze Garcia">
 <meta name="robots" content="index,follow">
 <link rel="alternate" hreflang="en" href="https://ezequielgarcia.github.io/parana-rosario/">
@@ -12,11 +12,11 @@
 <link rel="alternate" hreflang="x-default" href="https://ezequielgarcia.github.io/parana-rosario/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paraná at Rosario: when the wave arrives, and how high">
-<meta property="og:description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
+<meta property="og:description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1901. Crest estimate 4.76 m around 15 November 2026.">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Paraná at Rosario: when the wave arrives, and how high">
-<meta name="twitter:description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
+<meta name="twitter:description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1901. Crest estimate 4.76 m around 15 November 2026.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230d2a3f'/%3E%3Cpath d='M3 27h26' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M3 23 L9 21.5 L14 19 L19 12 L22 7 L26 9' fill='none' stroke='%233987e5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -182,6 +182,19 @@ td.num{font-weight:600}
 
 section{display:flex;flex-direction:column;gap:1rem}
 hr.rule{border:0;border-top:1px solid var(--rule);margin:0}
+/* verdict cards */
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(24rem,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.vcard{background:var(--surface);padding:1.1rem 1.15rem;display:flex;flex-direction:column;
+  gap:.5rem;min-width:0;border-top:3px solid transparent}
+.vcard.same{border-top-color:var(--sfe)}
+.vcard.diff{border-top-color:var(--cor)}
+.vcard .vtag{font-family:var(--font-data);font-size:.68rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase}
+.vcard.same .vtag{color:var(--sfe)}
+.vcard.diff .vtag{color:var(--cor)}
+.vcard p{font-size:.92rem;color:var(--ink-2)}
+
 /* colophon */
 footer.colophon{border-top:1px solid var(--rule);background:var(--surface);margin-top:1rem}
 footer.colophon .wrap{padding-block:1.6rem 2.4rem;gap:.7rem;max-width:62rem}
@@ -223,18 +236,18 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
     </div>
     <div class="tile hero">
       <span class="k">Estimated crest</span>
-      <span class="v">5.16<small> m</small></span>
-      <span class="s">Band 4.80 to 5.52 m. Alert is 5.00, evacuation 5.30.</span>
+      <span class="v">4.76<small> m</small></span>
+      <span class="s">Band 4.42 to 5.10 m. Alert is 5.00, evacuation 5.30.</span>
     </div>
     <div class="tile">
       <span class="k">Crest arrives</span>
-      <span class="v">18 Nov</span>
-      <span class="s">Broad flat crest, roughly 10 to 23 November.</span>
+      <span class="v">15 Nov</span>
+      <span class="s">Broad flat crest, roughly 8 to 20 November.</span>
     </div>
     <div class="tile">
-      <span class="k">Crosses 5.00 m</span>
-      <span class="v">10 Nov</span>
-      <span class="s">As early as 4 Nov on the fast edge of the band.</span>
+      <span class="k">Alerta, 5.00 m</span>
+      <span class="v">Unlikely</span>
+      <span class="s">Reached only at the upper edge of the band, around 9 November.</span>
     </div>
   </div>
   <p class="note">Figures are this analysis, not an official forecast. INA publishes to
@@ -255,7 +268,7 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
   <p>Rosario starts low, at 3.35 m against a 5.00 m alert. That starting level matters as
   much as the size of the wave: the same crest upstream produces a much lower crest at
   Rosario when the lower river begins from a low base, which is the main reason the answer
-  lands near the alert line rather than well above it.</p>
+  lands below the alert line rather than above it.</p>
 </section>
 
 <section class="plate" id="plate1">
@@ -288,7 +301,7 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
   <div class="legend" id="leg2"></div>
   <div class="chart"><div id="c2"></div><div class="tip" id="t2"></div></div>
   <div class="plate-foot">
-    <span>Crest 5.16 m on 18 Nov, band 4.80 to 5.52 m.</span>
+    <span>Crest 4.76 m on 15 Nov, band 4.42 to 5.10 m.</span>
     <button class="tbl" data-target="tv2" aria-expanded="false">Table view</button>
   </div>
   <div class="scroll" id="tv2" hidden></div>
@@ -309,19 +322,111 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
 <section class="plate" id="plate3">
   <div class="plate-head">
     <p class="eyebrow">Plate 3</p>
-    <h2>Every comparable wave since 1990</h2>
+    <h2>Every comparable wave since 1901</h2>
     <p class="sub">Each dot is one Corrientes peak above 6.00 m and the Rosario crest that
-    followed it, from 36 years of daily records. The line is the fitted relationship
+    followed it, from 126 years of daily records, 76 waves in all. The line is the fitted relationship
     evaluated at today's Rosario base of 3.35 m. The orange marker is where this wave lands
     on it. Hover any dot for its dates and lag.</p>
   </div>
   <div class="legend" id="leg3"></div>
   <div class="chart"><div id="c3"></div><div class="tip" id="t3"></div></div>
   <div class="plate-foot">
-    <span>Peak-to-peak lag: median 29 days, quartiles 23 and 37.</span>
+    <span>Peak-to-peak lag: median 27 days, quartiles 23 and 34.</span>
     <button class="tbl" data-target="tv3" aria-expanded="false">Table view</button>
   </div>
   <div class="scroll" id="tv3" hidden></div>
+</section>
+
+<section class="prose">
+  <h2>How waves behave in this river</h2>
+  <p>The Corrientes gauge record starts in 1901 and Rosario's in 1900, with both reading on
+  99% of the 46,309 days since. That holds 76 waves big enough to put Corrientes above
+  6.00 m. Whether they all behave alike decides how much the projection above can be
+  trusted, so it is worth testing rather than assuming.</p>
+  <p>They do not all behave alike, and the thing that varies is the one you would expect to
+  be fixed.</p>
+</section>
+
+<section class="plate" id="plate4">
+  <div class="plate-head">
+    <p class="eyebrow">Plate 4</p>
+    <h2>Four record waves against three that started here</h2>
+    <p class="sub">Rosario's rise above its own starting level, with every wave aligned on the
+    day Corrientes peaked. Orange is the four largest Corrientes peaks in the record. Blue is
+    three waves that began from a Rosario base within 0.15 m of today's 3.35 m. Measuring rise
+    rather than level, and aligning on the upstream peak, is what makes waves from different
+    decades comparable at all.</p>
+  </div>
+  <div class="legend" id="leg4"></div>
+  <div class="chart"><div id="c4"></div><div class="tip" id="t4"></div></div>
+  <div class="plate-foot">
+    <span>Same gain, same breadth, different arrival time.</span>
+    <button class="tbl" data-target="tv4" aria-expanded="false">Table view</button>
+  </div>
+  <div class="scroll" id="tv4" hidden></div>
+</section>
+
+<section class="plate" id="plate5">
+  <div class="plate-head">
+    <p class="eyebrow">Plate 5</p>
+    <h2>Big waves arrive sooner</h2>
+    <p class="sub">Every one of the 76 waves, plotted as the height of the Corrientes peak
+    against the days it then took Rosario to crest. The seven events from plate 4 are picked
+    out in colour. The downward slope is the point: a bigger wave moves through the reach
+    faster, because it is travelling down a channel the preceding water has already filled.</p>
+  </div>
+  <div class="legend" id="leg5"></div>
+  <div class="chart"><div id="c5"></div><div class="tip" id="t5"></div></div>
+  <div class="plate-foot">
+    <span>Correlation between peak height and lag: −0.34 across all 76.</span>
+    <button class="tbl" data-target="tv5" aria-expanded="false">Table view</button>
+  </div>
+  <div class="scroll" id="tv5" hidden></div>
+</section>
+
+<section>
+  <h2>What stays the same, and what does not</h2>
+  <div class="verdict">
+    <div class="vcard same">
+      <span class="vtag">Holds</span>
+      <h3>About a third of the rise survives the trip</h3>
+      <p>Divide Rosario's rise by the Corrientes rise that caused it and the answer is close
+      to 0.36 almost every time: 0.37 for the four record waves, 0.36 for the three that
+      started low. Sorted by starting level the bands give 0.36, 0.35 and 0.41. Sorted by peak
+      size, 0.29 to 0.46 with no trend. This is the one number in the whole analysis that
+      behaves like a physical constant, and it is what makes a 1923 wave useful for 2026.</p>
+    </div>
+    <div class="vcard same">
+      <span class="vtag">Holds</span>
+      <h3>Rosario never gets a sharp peak</h3>
+      <p>Counting the days Rosario sits within 0.25 m of its crest gives 18 days for the
+      record waves and 20 for the base-matched ones. The crest is a plateau two to three weeks
+      long in every case. The steep part of the climb is also consistent, between +0.27 and
+      +0.67 m in the fastest five-day stretch.</p>
+    </div>
+    <div class="vcard diff">
+      <span class="vtag">Varies</span>
+      <h3>Travel time is not a constant</h3>
+      <p>The four record waves crested Rosario a median of 16 days after Corrientes. The three
+      that started from today's low base took 26. Across all 76 the correlation between peak
+      height and lag is −0.34, and the eight waves above 7.5 m averaged 20 days against 28 for
+      everything below 7.0 m. Quoting a single travel time for this reach is wrong; it ranges
+      from 3 to 45 days in the record.</p>
+    </div>
+    <div class="vcard diff">
+      <span class="vtag">Varies</span>
+      <h3>The starting level decides the crest, not the peak</h3>
+      <p>1983 holds the record at Corrientes, 9.02 m on 18 July, and the March wave catalogued
+      here reached 8.39 m. It lifted Rosario just 0.36 m, to 6.17 m, because Rosario was
+      already at 5.81 m. February 1990 peaked half a metre lower and lifted Rosario 1.66 m,
+      because it started at 3.47 m. The same upstream wave writes a different number at
+      Rosario depending on how full the lower river already is, which is why this year's
+      answer lands near 4.8 m rather than near 6.</p>
+    </div>
+  </div>
+  <p class="note">One correction worth making: 1902 was not a flood year on this river. Its
+  highest Corrientes reading was 5.10 m, below the threshold used here. The great
+  early-century event is 1905, at 8.57 m, and it is the third largest in 126 years.</p>
 </section>
 
 <section>
@@ -330,15 +435,18 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
     <div class="step">
       <span class="n">ROUTING</span>
       <h3>Corrientes peak to Rosario crest</h3>
-      <p>For every Corrientes peak above 6.00 m since 1990, find the matching Rosario crest
-      within −5 to +50 days. Regress that crest on the Corrientes peak and on Rosario's own
-      level five days before it. The base term is not optional: drop it and the fit
-      overstates Rosario by about 0.4 m at today's low starting level.</p>
-      <div class="formula">R_crest = 0.95 + 0.353·C_peak + 0.393·R_base
-n = 23   residual sd = 0.27 m
-lag: median 29 d  (p25 23, p75 37)</div>
-      <p>With C_peak 7.31 m and R_base 3.35 m this gives <b>4.85 ± 0.27 m</b>, dated
-      29 days past 20 October, which is 18 November.</p>
+      <p>For every Corrientes peak above 6.00 m since 1901, find the matching Rosario crest
+      within −5 to +50 days. That yields 76 waves. Regress the crest on the Corrientes peak and
+      on Rosario's own level five days before it. The base term is not optional: drop it and the
+      fit overstates Rosario by about 0.4 m at today's low starting level.</p>
+      <div class="formula">R_crest = −0.27 + 0.499·C_peak + 0.414·R_base
+n = 76   residual sd = 0.24 m
+leave-one-out MAE = 0.19 m
+lag: median 27 d  (p25 23, p75 34)</div>
+      <p>With C_peak 7.31 m and R_base 3.35 m this gives <b>4.76 ± 0.24 m</b>, dated
+      26 days past 20 October, which is 15 November. Refitting without each wave in turn and
+      predicting it back puts the typical error at 0.19 m, and no bias on the sixteen waves of
+      this one's size.</p>
     </div>
     <div class="step">
       <span class="n">TRANSFER</span>
@@ -356,14 +464,16 @@ Rosario 5.00 m  ⇔  Santa Fe 5.35 m</div>
     <div class="step">
       <span class="n">SHAPE</span>
       <h3>Analogue trajectory</h3>
-      <p>Nine events since 1990 combine a Corrientes peak above 6.80 m with a sustained
-      rise of at least 1.50 m over the preceding month, which is the shape of this wave.
-      Their median Rosario trajectory, measured from day −5 relative to the Corrientes
-      peak, supplies the curve past INA's horizon; their quartiles supply the band.</p>
-      <p>Anchoring that shape on INA's 4.39 m for 27 October gives a crest of
-      <b>5.16 m</b> on 18 November. The two methods agree on the date and sit 0.3 m apart
-      on the height, so the honest read is the span they cover together: roughly
-      <b>4.8 to 5.3 m</b>, most likely right at the alert line.</p>
+      <p>Seven waves since 1901 began from a Rosario base under 3.75 m with a Corrientes peak
+      above 6.60 m, which is this wave's situation. Their median Rosario trajectory supplies the
+      curve past INA's horizon, and they crested a median of 27 days after the Corrientes peak.
+      Their median rise was 0.96 m.</p>
+      <p>A third check, independent of both: Rosario's rise has run at about 0.36 of the
+      Corrientes rise for 126 years, and a 3.36 m rise at Corrientes implies 1.21 m here, so
+      4.56 m. The fit says 4.76, the nearest analogues say 4.33. The page takes <b>4.76 m</b>
+      and carries that spread as the band. An earlier version of this page fitted on 1990-2026
+      only and published 5.16 m; that sample happened to hold mostly waves starting from a far
+      higher base, which inflated it.</p>
     </div>
   </div>
 </section>
@@ -391,7 +501,7 @@ Rosario 5.00 m  ⇔  Santa Fe 5.35 m</div>
     crest and its date up.</p>
     <p><b>Travel time stretches with volume.</b> INA says so explicitly for this wave.
     Every date here is more likely to slip later than earlier, which is why the band's
-    lower edge never reaches 5.00 m while its upper edge gets there on 4 November.</p>
+    lower edge never reaches 5.00 m and its upper edge only just gets there, on 9 November.</p>
     <p><b>The press date of 28 October does not survive arithmetic.</b> Several outlets
     quote the alert being crossed around 28 October. INA's own numeric forecast has
     Rosario at 4.39 m on 27 October, and no plausible rate covers 0.6 m in a day at that
@@ -412,7 +522,7 @@ Rosario 5.00 m  ⇔  Santa Fe 5.35 m</div>
     <a href="https://alerta.ina.gob.ar/a5/secciones">INA a5, series observadas</a>
   </p>
   <p class="note">Observed series are INA a5 series 19 (Corrientes), 30 (Santa Fe) and
-  34 (Rosario), variable 2, daily records from 1990. Numeric forecasts are the
+  34 (Rosario), variable 2, daily records from 1901 for Corrientes and 1900 for Rosario. Numeric forecasts are the
   <code>*_prono.csv</code> files, which carry a lower, central and upper value for each
   horizon. Every figure on this page is reproducible from those two endpoints alone.</p>
 </section>
@@ -451,20 +561,20 @@ const INA = {
   rosario:   [{d:'2026-10-20',lo:3.40,mid:3.73,hi:4.20},{d:'2026-10-27',lo:3.90,mid:4.39,hi:4.70}]
 };
 
-const PROJ = [["10-16",3.35,3.35,3.35,0],["10-17",3.36,3.45,3.56,0],["10-18",3.38,3.54,3.78,0],["10-19",3.39,3.63,3.99,0],["10-20",3.40,3.73,4.20,0],["10-21",3.47,3.82,4.27,0],["10-22",3.54,3.92,4.34,0],["10-23",3.61,4.01,4.41,0],["10-24",3.69,4.11,4.49,0],["10-25",3.76,4.20,4.56,0],["10-26",3.83,4.30,4.63,0],["10-27",3.90,4.39,4.70,0],["10-28",4.01,4.47,4.77,1],["10-29",4.05,4.48,4.78,1],["10-30",4.13,4.53,4.83,1],["10-31",4.20,4.57,4.87,1],["11-01",4.26,4.61,4.91,1],["11-02",4.32,4.64,4.94,1],["11-03",4.37,4.67,4.97,1],["11-04",4.40,4.70,5.00,1],["11-05",4.41,4.72,5.03,1],["11-06",4.51,4.82,5.13,1],["11-07",4.53,4.84,5.15,1],["11-08",4.56,4.88,5.20,1],["11-09",4.63,4.95,5.27,1],["11-10",4.69,5.02,5.35,1],["11-11",4.67,5.00,5.33,1],["11-12",4.69,5.02,5.35,1],["11-13",4.71,5.05,5.39,1],["11-14",4.75,5.09,5.43,1],["11-15",4.76,5.11,5.46,1],["11-16",4.79,5.14,5.49,1],["11-17",4.80,5.15,5.50,1],["11-18",4.80,5.16,5.52,1],["11-19",4.76,5.12,5.48,1],["11-20",4.75,5.12,5.49,1],["11-21",4.76,5.13,5.50,1],["11-22",4.76,5.13,5.50,1],["11-23",4.73,5.12,5.50,1],["11-24",4.67,5.05,5.43,1],["11-25",4.66,5.05,5.44,1],["11-26",4.59,4.98,5.37,1],["11-27",4.60,5.01,5.40,1],["11-28",4.60,5.00,5.40,1],["11-29",4.57,4.97,5.37,1],["11-30",4.50,4.91,5.32,1],["12-01",4.50,4.91,5.32,1],["12-02",4.50,4.91,5.32,1],["12-03",4.49,4.91,5.33,1],["12-04",4.44,4.86,5.28,1],["12-05",4.38,4.81,5.24,1],["12-06",4.36,4.79,5.22,1],["12-07",4.24,4.67,5.10,1],["12-08",4.23,4.67,5.11,1],["12-09",4.17,4.61,5.06,1],["12-10",4.13,4.58,5.03,1]]
+const PROJ = [["10-16",3.35,3.35,3.35,0],["10-17",3.36,3.45,3.56,0],["10-18",3.38,3.54,3.78,0],["10-19",3.39,3.63,3.99,0],["10-20",3.4,3.73,4.2,0],["10-21",3.47,3.82,4.27,0],["10-22",3.54,3.92,4.34,0],["10-23",3.61,4.01,4.41,0],["10-24",3.69,4.11,4.49,0],["10-25",3.76,4.2,4.56,0],["10-26",3.83,4.3,4.63,0],["10-27",3.9,4.39,4.7,0],["10-28",3.96,4.41,4.71,1],["10-29",4.04,4.46,4.75,1],["10-30",4.09,4.47,4.76,1],["10-31",4.13,4.49,4.77,1],["11-01",4.18,4.51,4.78,1],["11-02",4.24,4.54,4.82,1],["11-03",4.3,4.57,4.85,1],["11-04",4.31,4.59,4.87,1],["11-05",4.32,4.6,4.89,1],["11-06",4.37,4.66,4.95,1],["11-07",4.37,4.67,4.96,1],["11-08",4.39,4.69,4.99,1],["11-09",4.39,4.69,5.0,1],["11-10",4.38,4.69,5.0,1],["11-11",4.4,4.71,5.03,1],["11-12",4.4,4.72,5.04,1],["11-13",4.4,4.73,5.05,1],["11-14",4.41,4.74,5.07,1],["11-15",4.42,4.76,5.09,1],["11-16",4.42,4.76,5.1,1],["11-17",4.4,4.75,5.09,1],["11-18",4.39,4.74,5.09,1],["11-19",4.37,4.72,5.08,1],["11-20",4.37,4.73,5.09,1],["11-21",4.36,4.72,5.09,1],["11-22",4.34,4.71,5.08,1],["11-23",4.32,4.7,5.07,1],["11-24",4.31,4.69,5.07,1],["11-25",4.29,4.68,5.06,1],["11-26",4.3,4.69,5.08,1],["11-27",4.27,4.66,5.06,1],["11-28",4.28,4.68,5.08,1],["11-29",4.28,4.68,5.09,1],["11-30",4.27,4.68,5.09,1],["12-01",4.27,4.69,5.1,1],["12-02",4.26,4.68,5.1,1],["12-03",4.2,4.62,5.05,1],["12-04",4.18,4.61,5.04,1],["12-05",4.22,4.66,5.09,1],["12-06",4.2,4.64,5.08,1],["12-07",4.13,4.57,5.02,1],["12-08",4.09,4.54,4.99,1],["12-09",4.08,4.54,4.99,1],["12-10",4.05,4.51,4.97,1],["12-11",4.04,4.51,4.97,1],["12-12",4.03,4.5,4.97,1],["12-13",3.99,4.46,4.94,1],["12-14",3.93,4.41,4.89,1],["12-15",3.93,4.41,4.9,1],["12-16",3.89,4.38,4.87,1],["12-17",3.85,4.35,4.84,1],["12-18",3.82,4.32,4.82,1],["12-19",3.77,4.27,4.78,1],["12-20",3.78,4.29,4.8,1]]
   .map(p => ({i:di('2026-'+p[0]), lo:p[1], mid:p[2], hi:p[3], model:!!p[4]}));
 
-const EVENTS = [[7.17,4.22,4.79,26,"Jun 1990"],[6.51,4.12,4.80,24,"Sep 1990"],[8.64,5.22,6.27,17,"Jun 1992"],[6.13,4.11,4.75,30,"Nov 1992"],[6.32,4.54,4.80,23,"Mar 1993"],[6.49,2.64,4.64,37,"Oct 1993"],[6.20,2.50,4.57,35,"Oct 1996"],[7.70,4.41,5.55,29,"Feb 1997"],[6.57,4.65,5.34,45,"Nov 1997"],[6.22,5.38,5.44,45,"Feb 1998"],[8.39,5.95,6.43,10,"May 1998"],[7.27,4.71,5.10,30,"Oct 1998"],[6.13,3.90,4.31,21,"Mar 2001"],[6.54,4.38,5.41,29,"Mar 2007"],[6.80,5.06,5.58,30,"Jan 2010"],[6.54,4.02,4.60,37,"Mar 2011"],[7.22,3.41,4.62,27,"Jul 2013"],[7.16,3.99,4.98,41,"Jun 2014"],[6.29,3.49,4.55,23,"Jul 2015"],[7.46,5.22,5.55,3,"Jan 2016"],[7.32,5.19,5.35,37,"Mar 2016"],[6.16,4.53,5.01,25,"Jun 2017"],[6.60,3.47,4.21,30,"Jan 2018"]]
+const EVENTS = [[6.77,4.54,5.08,23,"Mar 1905"],[8.57,4.88,6.24,16,"Jun 1905"],[6.2,3.85,4.49,41,"Feb 1908"],[7.41,4.44,5.1,17,"Jan 1912"],[7.0,4.47,4.8,22,"Mar 1912"],[6.11,4.29,4.46,32,"Mar 1920"],[7.05,4.16,4.94,32,"Feb 1921"],[6.0,2.45,3.68,20,"Oct 1921"],[6.35,4.28,4.59,6,"Jul 1922"],[7.29,3.41,4.37,26,"Jun 1923"],[6.72,2.91,4.3,38,"Feb 1926"],[6.13,3.98,4.23,31,"Apr 1926"],[6.14,3.82,4.12,28,"Jun 1928"],[6.42,3.23,3.86,16,"Oct 1928"],[6.3,3.69,4.33,37,"Feb 1930"],[7.04,4.19,4.88,35,"Mar 1931"],[6.72,4.77,4.91,25,"Jun 1931"],[6.56,4.29,4.7,22,"Apr 1932"],[6.74,3.48,4.36,25,"Oct 1935"],[6.53,1.6,3.82,17,"Jun 1936"],[6.42,3.05,4.22,36,"Dec 1939"],[6.76,3.96,4.43,28,"Mar 1946"],[6.0,3.65,3.98,22,"Jul 1946"],[6.23,4.21,4.5,25,"Apr 1947"],[6.7,4.1,4.69,32,"Mar 1951"],[6.37,3.86,4.3,21,"Jun 1954"],[6.17,3.85,4.2,32,"Jun 1956"],[6.6,4.03,4.48,27,"Oct 1957"],[6.78,4.05,4.81,25,"Feb 1959"],[6.94,3.91,5.02,41,"Mar 1961"],[6.78,3.67,4.51,42,"Mar 1965"],[6.42,4.16,4.44,24,"May 1965"],[7.93,5.23,6.06,31,"Mar 1966"],[6.23,3.57,4.27,22,"Oct 1972"],[6.26,4.04,4.27,25,"Dec 1972"],[6.27,4.26,4.71,40,"Feb 1973"],[6.34,3.57,4.4,34,"Feb 1974"],[6.27,4.01,4.4,27,"Apr 1974"],[7.13,4.56,5.53,20,"Feb 1977"],[6.26,2.73,3.86,24,"May 1979"],[6.26,4.0,4.46,38,"Nov 1979"],[6.81,4.38,4.9,24,"Mar 1980"],[6.42,4.13,4.84,28,"Feb 1981"],[6.42,4.23,4.52,28,"Apr 1982"],[7.26,4.27,5.07,24,"Jul 1982"],[7.8,4.08,5.86,26,"Dec 1982"],[8.39,5.81,6.17,19,"Mar 1983"],[7.13,4.32,4.88,20,"Oct 1983"],[6.13,4.29,4.82,42,"Jan 1984"],[7.38,4.39,5.09,26,"May 1987"],[6.04,3.15,4.32,43,"Feb 1989"],[6.95,4.0,4.58,27,"Sep 1989"],[7.93,3.47,5.13,22,"Feb 1990"],[7.17,4.22,4.79,26,"Jun 1990"],[6.51,4.12,4.8,24,"Sep 1990"],[8.64,5.22,6.27,17,"Jun 1992"],[6.13,4.11,4.75,30,"Nov 1992"],[6.32,4.54,4.8,23,"Mar 1993"],[6.49,2.64,4.64,37,"Oct 1993"],[6.2,2.5,4.57,35,"Oct 1996"],[7.7,4.41,5.55,29,"Feb 1997"],[6.57,4.65,5.34,45,"Nov 1997"],[6.22,5.38,5.44,45,"Feb 1998"],[8.39,5.95,6.43,10,"May 1998"],[7.27,4.71,5.1,30,"Oct 1998"],[6.13,3.9,4.31,21,"Mar 2001"],[6.54,4.38,5.41,29,"Mar 2007"],[6.8,5.06,5.58,30,"Jan 2010"],[6.54,4.02,4.6,37,"Mar 2011"],[7.22,3.41,4.62,27,"Jul 2013"],[7.16,3.99,4.98,41,"Jun 2014"],[6.29,3.49,4.55,23,"Jul 2015"],[7.46,5.22,5.55,3,"Jan 2016"],[7.32,5.19,5.35,37,"Mar 2016"],[6.16,4.53,5.01,25,"Jun 2017"],[6.6,3.47,4.21,30,"Jan 2018"]]
   .map(e => ({c:e[0], base:e[1], r:e[2], lag:e[3], when:e[4]}));
-const FIT = {b0:0.953, b1:0.3533, b2:0.3932, sd:0.271};
+const FIT = {b0:-0.272, b1:0.4992, b2:0.4140, sd:0.241};
 const R_BASE_NOW = 3.35, C_PEAK_NOW = 7.31;
 const fit = c => FIT.b0 + FIT.b1*c + FIT.b2*R_BASE_NOW;
 
 const THRESHOLDS = [
-  {lv:4.00, what:'Low islands and riverside paths go under', e:'20 Oct', c:'23 Oct', l:'28 Oct'},
-  {lv:4.50, what:'Water reaches the Rosario costanera lower deck', e:'25 Oct', c:'30 Oct', l:'6 Nov'},
-  {lv:5.00, what:'Alerta', e:'4 Nov', c:'10 Nov', l:'–'},
-  {lv:5.30, what:'Evacuación', e:'10 Nov', c:'–', l:'–'}
+  {lv:4.00, what:'Low islands and riverside paths go under', e:'20 Oct', c:'23 Oct', l:'29 Oct'},
+  {lv:4.50, what:'Water reaches the Rosario costanera lower deck', e:'25 Oct', c:'1 Nov', l:'–'},
+  {lv:5.00, what:'Alerta', e:'9 Nov', c:'–', l:'–'},
+  {lv:5.30, what:'Evacuación', e:'–', c:'–', l:'–'}
 ];
 
 const GAUGES = [
@@ -650,9 +760,8 @@ function plate2(){
   const HANDOFF = di('2026-10-27');
   const marks = [
     {d:'2026-10-23', v:4.01, t:'4.00 m'},
-    {d:'2026-10-30', v:4.53, t:'4.50 m'},
-    {d:'2026-11-10', v:5.02, t:'5.00 m · alerta'},
-    {d:'2026-11-18', v:5.16, t:'crest 5.16 m'}
+    {d:'2026-11-01', v:4.51, t:'4.50 m'},
+    {d:'2026-11-15', v:4.76, t:'crest 4.76 m'}
   ];
   timeChart('c2', {
     height: 330, right: 20, x0:X0, x1:X1, y0:2.0, y1:6.0, ystep:0.5,
@@ -699,7 +808,7 @@ function plate2(){
           style:'fill:var(--surface);stroke:var(--ros);stroke-width:2'}));
         // the crest label goes beside the dot on one line, so it clears both rules;
         // it flips to the left when it would otherwise run past the plot edge
-        const crest = n === 3;
+        const crest = n === marks.length - 1;
         if (crest){
           const label = mk2.t + ' \u00b7 ' + dlabel(di(mk2.d));
           const flip = px + 10 + label.length * 6.4 > g.W - g.m.r;
@@ -734,11 +843,11 @@ function plate3(){
   const H = 330;
   const m = {t:26, r:16, b:46, l:38};
   const pw = W - m.l - m.r, ph = H - m.t - m.b;
-  const X0 = 5.9, X1 = 8.8, Y0 = 4.0, Y1 = 6.6;
+  const X0 = 5.8, X1 = 8.9, Y0 = 3.5, Y1 = 6.6;
   const x = v => m.l + (v - X0) / (X1 - X0) * pw;
   const y = v => m.t + (Y1 - v) / (Y1 - Y0) * ph;
   const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img',
-    'aria-label':'Scatter of 23 Corrientes peaks since 1990 against the Rosario crest that followed each one.'});
+    'aria-label':'Scatter of 76 Corrientes peaks since 1901 against the Rosario crest that followed each one.'});
 
   for (let v = Y0; v <= Y1 + 1e-9; v += 0.5){
     svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(v), y2:y(v),
@@ -795,7 +904,7 @@ function plate3(){
     style:'stroke:var(--cor);stroke-width:2;stroke-linecap:round'}));
   svg.appendChild(mk('circle', {cx:x(C_PEAK_NOW), cy:y(py), r:6,
     style:'fill:var(--cor);stroke:var(--surface);stroke-width:2.5'}));
-  svg.appendChild(txt(x(C_PEAK_NOW) + 11, y(py) + 4, 'Oct 2026 · 4.85 ± 0.27 m',
+  svg.appendChild(txt(x(C_PEAK_NOW) + 11, y(py) + 4, 'Oct 2026 · 4.76 ± 0.24 m',
     {style:LB + ';fill:var(--cor)'}));
 
   box.replaceChildren(svg);
@@ -812,13 +921,13 @@ function plate3(){
     s2.appendChild(txt(lx(v), 50, v, {style:AX, 'text-anchor':'middle'}));
   });
   s2.appendChild(txt(0, 14, 'lag (d)', {style:AX}));
-  s2.appendChild(mk('rect', {x:lx(23), y:16, width:lx(37) - lx(23), height:14,
+  s2.appendChild(mk('rect', {x:lx(23), y:16, width:lx(34) - lx(23), height:14,
     style:'fill:var(--band-2)'}));
   EVENTS.forEach(e => s2.appendChild(mk('circle', {cx:lx(e.lag), cy:23, r:4,
     style:'fill:var(--ros);fill-opacity:.7;stroke:var(--surface);stroke-width:1.5'})));
-  s2.appendChild(mk('line', {x1:lx(29), x2:lx(29), y1:13, y2:33,
+  s2.appendChild(mk('line', {x1:lx(27), x2:lx(27), y1:13, y2:33,
     style:'stroke:var(--ink);stroke-width:2'}));
-  s2.appendChild(txt(lx(29) + 6, 11, 'median 29', {style:LB + ';fill:var(--ink)'}));
+  s2.appendChild(txt(lx(27) + 6, 11, 'median 27', {style:LB + ';fill:var(--ink)'}));
   document.getElementById('c3').appendChild(s2);
 }
 
@@ -838,7 +947,7 @@ function legends(){
     sw('', 'var(--alerta)') + 'Alerta 5.00 m</span>' +
     sw('', 'var(--evac)') + 'Evacuación 5.30 m</span>';
   document.getElementById('leg3').innerHTML =
-    sw(' sq', 'var(--ros)') + '23 events, 1990 to 2026</span>' +
+    sw(' sq', 'var(--ros)') + '76 waves, 1901 to 2026</span>' +
     sw(' sq', 'var(--cor)') + 'This wave, fitted</span>';
 }
 
@@ -899,8 +1008,215 @@ function tables(){
   });
 }
 
-function drawAll(){ plate1(); plate2(); plate3(); }
-legends(); tables(); drawAll();
+const F1 = v => v.toFixed(1);
+const F2 = v => v.toFixed(2);
+
+/* ---------- plates 4 and 5: how waves behave ---------- */
+const SHAPES = [{"id":"1905","grp":"big","date":"1905-06-05","c":8.57,"base":4.88,"r":6.24,"lag":16,"gain":0.46,"breadth":12,"ros":[-0.11,-0.09,-0.09,-0.1,-0.1,-0.08,-0.06,-0.07,-0.09,-0.09,-0.08,-0.05,-0.04,-0.02,-0.02,0.0,-0.02,0.01,0.02,0.03,0.04,0.05,0.2,0.2,0.28,0.41,0.56,0.64,0.68,0.85,1.08,1.2,1.26,1.26,1.26,1.3,1.36,null,null,1.27,1.26,1.22,1.21,1.16,null,1.11,0.93,0.93,0.96,0.89,0.86,0.8,0.8,0.82,0.72,0.66,0.6,0.58,0.57,0.56,0.48,0.45,0.4,0.4,0.38,0.35,0.32,0.26,0.26,0.26,0.26,0.24,0.22,0.19,0.16,0.16,0.16,0.15,0.15,0.14,0.12]},{"id":"1983","grp":"big","date":"1983-03-05","c":8.39,"base":5.81,"r":6.17,"lag":19,"gain":0.32,"breadth":24,"ros":[-0.06,-0.11,-0.15,-0.19,-0.16,-0.19,-0.17,-0.16,-0.13,-0.11,-0.1,-0.08,-0.04,-0.06,-0.03,0.0,0.0,-0.02,0.01,0.01,0.01,0.03,0.06,0.07,0.09,0.04,0.12,0.15,0.19,0.24,0.26,0.26,0.23,0.19,0.24,0.29,0.31,0.33,0.35,0.36,0.36,0.33,0.28,0.23,0.21,0.24,0.25,0.22,0.18,0.14,0.07,0.05,0.07,0.06,0.04,0.07,0.04,0.03,0.01,-0.04,-0.05,-0.06,-0.05,-0.03,-0.11,-0.21,-0.28,-0.28,-0.27,-0.27,-0.32,-0.38,-0.37,-0.41,-0.43,-0.51,-0.51,-0.5,-0.47,-0.49,-0.47]},{"id":"1992","grp":"big","date":"1992-06-08","c":8.64,"base":5.22,"r":6.27,"lag":17,"gain":0.43,"breadth":14,"ros":[-0.37,-0.36,-0.31,-0.27,-0.25,-0.25,-0.2,-0.16,-0.13,-0.14,-0.12,-0.11,-0.07,-0.02,-0.01,0.0,0.03,0.08,0.08,0.12,0.13,0.15,0.09,0.18,0.19,0.28,0.29,0.37,0.48,0.52,0.62,0.68,0.77,0.82,0.84,0.96,1.01,1.05,1.04,1.04,1.02,1.02,0.98,0.98,0.93,0.87,0.96,0.77,0.64,0.7,0.78,0.73,0.72,0.57,0.51,0.45,0.38,0.33,0.31,0.33,0.32,0.21,0.18,0.19,0.13,0.11,0.17,0.2,0.23,0.1,0.08,0.08,0.03,-0.02,-0.05,-0.03,-0.04,-0.06,-0.11,-0.13,-0.13]},{"id":"1998","grp":"big","date":"1998-05-04","c":8.39,"base":5.95,"r":6.43,"lag":10,"gain":0.28,"breadth":23,"ros":[-0.58,-0.59,-0.57,-0.61,-0.61,-0.6,-0.55,-0.48,-0.44,-0.35,-0.26,-0.19,-0.11,-0.05,0.05,0.0,-0.04,0.08,0.13,0.2,0.24,0.28,0.3,0.33,0.33,0.35,0.36,0.37,0.38,0.39,0.48,0.48,0.47,0.47,0.47,0.47,0.41,0.4,0.35,0.34,0.33,0.27,0.29,0.13,0.15,0.15,0.07,0.02,0.01,0.0,-0.07,-0.07,-0.12,-0.18,-0.18,-0.22,-0.28,-0.32,-0.35,-0.37,-0.37,-0.37,-0.41,-0.46,-0.53,-0.56,-0.56,-0.61,-0.61,-0.61,-0.65,-0.67,-0.69,-0.7,-0.71,-0.73,-0.76,-0.77,-0.8,-0.85,-0.85]},{"id":"1923","grp":"base","date":"1923-06-27","c":7.29,"base":3.41,"r":4.37,"lag":26,"gain":0.35,"breadth":23,"ros":[0.18,0.18,0.18,0.18,0.18,0.18,0.17,0.14,0.14,0.16,0.1,0.14,0.09,0.05,0.01,0.0,0.02,0.03,0.05,0.08,0.12,0.16,0.21,0.27,0.25,0.28,0.32,0.35,0.39,0.46,0.49,0.49,0.54,0.51,0.52,0.61,0.67,0.72,0.76,0.79,0.83,0.85,0.88,0.9,0.91,0.93,0.96,0.96,0.94,0.92,0.9,0.91,0.9,0.88,0.86,0.84,0.82,0.84,0.77,0.72,0.69,0.61,0.56,0.48,0.37,0.32,0.32,0.2,0.08,-0.08,-0.08,-0.08,-0.14,-0.21,-0.27,-0.35,-0.42,-0.53,-0.63,-0.7,-0.8]},{"id":"1990","grp":"base","date":"1990-02-01","c":7.93,"base":3.47,"r":5.13,"lag":22,"gain":0.37,"breadth":20,"ros":[-0.5,-0.52,-0.49,-0.46,-0.46,-0.37,-0.33,-0.33,-0.31,-0.22,-0.18,-0.15,-0.12,-0.08,-0.02,0.0,0.03,0.08,0.12,0.24,0.36,0.51,0.56,0.6,0.73,0.76,0.8,0.85,0.89,0.93,0.97,1.01,1.12,1.26,1.33,1.41,1.46,1.53,1.53,1.6,1.6,1.64,1.66,1.65,1.65,1.63,1.6,1.6,1.64,1.59,1.57,1.57,1.53,1.48,1.43,1.39,1.35,1.33,1.28,1.21,1.19,1.13,1.13,1.11,1.07,1.03,1.03,0.94,0.89,0.83,0.77,0.68,0.63,0.56,0.47,0.44,0.39,0.33,0.28,0.23,0.13]},{"id":"2013","grp":"base","date":"2013-07-04","c":7.22,"base":3.41,"r":4.62,"lag":27,"gain":0.36,"breadth":20,"ros":[-0.09,-0.09,-0.01,-0.01,0.01,-0.01,-0.05,-0.02,0.01,0.01,-0.02,0.02,0.03,0.01,0.0,0.0,0.0,0.0,0.01,0.08,0.11,0.11,0.13,0.19,0.21,0.28,0.36,0.41,0.45,0.46,0.51,0.55,0.59,0.62,0.65,0.68,0.7,0.8,0.82,0.86,0.93,1.0,1.07,1.12,1.13,1.19,1.2,1.21,1.21,1.17,1.16,1.17,1.15,1.14,1.1,1.03,1.03,0.96,0.99,0.99,1.03,0.89,0.89,0.89,0.89,0.84,0.79,0.77,0.65,0.65,0.59,0.53,0.5,0.47,0.43,0.33,0.33,0.16,0.16,0.12,-0.03]}];
+const LAGPTS = [[6.77,23,4.54,"1905-03"],[8.57,16,4.88,"1905-06"],[6.2,41,3.85,"1908-02"],[7.41,17,4.44,"1912-01"],[7.0,22,4.47,"1912-03"],[6.11,32,4.29,"1920-03"],[7.05,32,4.16,"1921-02"],[6.0,20,2.45,"1921-10"],[6.35,6,4.28,"1922-07"],[7.29,26,3.41,"1923-06"],[6.72,38,2.91,"1926-02"],[6.13,31,3.98,"1926-04"],[6.14,28,3.82,"1928-06"],[6.42,16,3.23,"1928-10"],[6.3,37,3.69,"1930-02"],[7.04,35,4.19,"1931-03"],[6.72,25,4.77,"1931-06"],[6.56,22,4.29,"1932-04"],[6.74,25,3.48,"1935-10"],[6.53,17,1.6,"1936-06"],[6.42,36,3.05,"1939-12"],[6.76,28,3.96,"1946-03"],[6.0,22,3.65,"1946-07"],[6.23,25,4.21,"1947-04"],[6.7,32,4.1,"1951-03"],[6.37,21,3.86,"1954-06"],[6.17,32,3.85,"1956-06"],[6.6,27,4.03,"1957-10"],[6.78,25,4.05,"1959-02"],[6.94,41,3.91,"1961-03"],[6.78,42,3.67,"1965-03"],[6.42,24,4.16,"1965-05"],[7.93,31,5.23,"1966-03"],[6.23,22,3.57,"1972-10"],[6.26,25,4.04,"1972-12"],[6.27,40,4.26,"1973-02"],[6.34,34,3.57,"1974-02"],[6.27,27,4.01,"1974-04"],[7.13,20,4.56,"1977-02"],[6.26,24,2.73,"1979-05"],[6.26,38,4.0,"1979-11"],[6.81,24,4.38,"1980-03"],[6.42,28,4.13,"1981-02"],[6.42,28,4.23,"1982-04"],[7.26,24,4.27,"1982-07"],[7.8,26,4.08,"1982-12"],[8.39,19,5.81,"1983-03"],[7.13,20,4.32,"1983-10"],[6.13,42,4.29,"1984-01"],[7.38,26,4.39,"1987-05"],[6.04,43,3.15,"1989-02"],[6.95,27,4.0,"1989-09"],[7.93,22,3.47,"1990-02"],[7.17,26,4.22,"1990-06"],[6.51,24,4.12,"1990-09"],[8.64,17,5.22,"1992-06"],[6.13,30,4.11,"1992-11"],[6.32,23,4.54,"1993-03"],[6.49,37,2.64,"1993-10"],[6.2,35,2.5,"1996-10"],[7.7,29,4.41,"1997-02"],[6.57,45,4.65,"1997-11"],[6.22,45,5.38,"1998-02"],[8.39,10,5.95,"1998-05"],[7.27,30,4.71,"1998-10"],[6.13,21,3.9,"2001-03"],[6.54,29,4.38,"2007-03"],[6.8,30,5.06,"2010-01"],[6.54,37,4.02,"2011-03"],[7.22,27,3.41,"2013-07"],[7.16,41,3.99,"2014-06"],[6.29,23,3.49,"2015-07"],[7.46,3,5.22,"2016-01"],[7.32,37,5.19,"2016-03"],[6.16,25,4.53,"2017-06"],[6.6,30,3.47,"2018-01"]];          // [C_peak, lag days, R_base, yyyy-mm]
+const LAGFIT = {a: 58.63, b: -4.571};
+const T = {
+ "alt4": "Rosario's rise above its starting level for seven historical waves, aligned on the day the Corrientes peak occurred.",
+ "alt5": "Corrientes peak height against the days Rosario then took to crest, for all 76 waves since 1901.",
+ "axis4x": "days from the Corrientes peak",
+ "axis4y": "Rosario rise above its base (m)",
+ "day0": "Corrientes peak",
+ "dshort": "d",
+ "axis5x": "Corrientes peak (m)",
+ "axis5y": "days to the Rosario crest",
+ "trend": "fitted trend",
+ "cpk": "Corrientes peak",
+ "rbase": "Rosario base",
+ "rcrest": "Rosario crest",
+ "crise": "Corrientes rise",
+ "rrise": "Rosario rise",
+ "gain": "gain",
+ "lag": "Lag",
+ "breadth": "Crest breadth",
+ "event": "Event",
+ "lgAll": "All 76 waves since 1901",
+ "lgBig": "Four record waves",
+ "lgBase": "Three from the base we are at",
+ "cap4": "The seven waves in plate 4. Gain is the Rosario rise divided by the Corrientes rise. Crest breadth counts the days Rosario held within 0.25 m of its crest.",
+ "cap5": "All 76 matched waves, largest Corrientes peak first. The seven highlighted rows are those in plate 4."
+};
+
+function plate4(){
+  const box = document.getElementById('c4');
+  const W = Math.max(300, box.clientWidth), H = 330;
+  const m = {t:18, r:W < 520 ? 16 : 54, b:40, l:40};
+  const pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const X0 = -20, X1 = 60, Y0 = -1.0, Y1 = 1.8;
+  const x = v => m.l + (v - X0) / (X1 - X0) * pw;
+  const y = v => m.t + (Y1 - v) / (Y1 - Y0) * ph;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img',
+    'aria-label':T.alt4});
+
+  for (let v = Y0; v <= Y1 + 1e-9; v += 0.5){
+    svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(v), y2:y(v),
+      style:'stroke:var(--grid);stroke-width:1'}));
+    svg.appendChild(txt(m.l - 7, y(v) + 3.5, (v > 0 ? '+' : '') + F1(v),
+      {style:AX, 'text-anchor':'end'}));
+  }
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(0), y2:y(0),
+    style:'stroke:var(--baseline);stroke-width:1.5'}));
+  for (let v = X0; v <= X1; v += 10){
+    svg.appendChild(mk('line', {x1:x(v), x2:x(v), y1:m.t + ph, y2:m.t + ph + 4,
+      style:'stroke:var(--baseline);stroke-width:1'}));
+    svg.appendChild(txt(x(v), m.t + ph + 17, (v > 0 ? '+' : '') + v,
+      {style:AX, 'text-anchor':'middle'}));
+  }
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:m.t + ph, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1'}));
+  svg.appendChild(txt(m.l + pw / 2, m.t + ph + 34, T.axis4x,
+    {style:AX, 'text-anchor':'middle'}));
+  svg.appendChild(txt(m.l - 7, m.t - 6, T.axis4y, {style:AX, 'text-anchor':'start'}));
+
+  // day 0 rule
+  svg.appendChild(mk('line', {x1:x(0), x2:x(0), y1:m.t, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1'}));
+  svg.appendChild(txt(x(0) + 5, m.t + 11, T.day0, {style:AX}));
+
+  SHAPES.forEach(s => {
+    const col = s.grp === 'big' ? 'var(--cor)' : 'var(--ros)';
+    const pts = [];
+    s.ros.forEach((v, n) => { if (v !== null) pts.push([x(n - 20), y(v)]); });
+    svg.appendChild(poly(pts, col, 2));
+    // direct label at the crest of each line
+    let bi = 0;
+    s.ros.forEach((v, n) => { if (v !== null && v > (s.ros[bi] ?? -9)) bi = n; });
+    const lx = x(bi - 20), ly = y(s.ros[bi]);
+    const flip = lx + 34 > W - m.r;
+    svg.appendChild(txt(lx + (flip ? -6 : 6), ly - 6, s.id,
+      {style:LB + ';fill:' + col, 'text-anchor':flip ? 'end' : 'start'}));
+  });
+
+  const hit = mk('rect', {x:m.l, y:m.t, width:pw, height:ph, fill:'transparent',
+    style:'cursor:crosshair'});
+  const cross = mk('line', {x1:0, x2:0, y1:m.t, y2:m.t + ph, opacity:0,
+    style:'stroke:var(--ink-2);stroke-width:1'});
+  svg.appendChild(cross); svg.appendChild(hit);
+  const tip = document.getElementById('t4');
+  hit.addEventListener('pointermove', ev => {
+    const rc = svg.getBoundingClientRect();
+    const px = (ev.clientX - rc.left) * (W / rc.width);
+    let d = Math.round(X0 + (px - m.l) / pw * (X1 - X0));
+    d = Math.max(X0, Math.min(X1, d));
+    cross.setAttribute('x1', x(d)); cross.setAttribute('x2', x(d));
+    cross.setAttribute('opacity', .45);
+    tip.innerHTML = '<div class="th">' + (d > 0 ? '+' : '') + d + ' ' + T.dshort + '</div>' +
+      SHAPES.map(s => {
+        const v = s.ros[d + 20];
+        return '<div class="tr"><span><i class="dot" style="background:' +
+          (s.grp === 'big' ? 'var(--cor)' : 'var(--ros)') + '"></i>' + s.id + '</span><b>' +
+          (v === null || v === undefined ? '–' : (v > 0 ? '+' : '') + F2(v) + ' m') + '</b></div>';
+      }).join('');
+    const tw = tip.offsetWidth || 150;
+    tip.style.left = Math.max(4, Math.min(box.clientWidth - tw - 4, x(d) - tw / 2)) + 'px';
+    tip.style.top = m.t + 'px';
+    tip.style.opacity = 1;
+  });
+  hit.addEventListener('pointerleave', () => {
+    cross.setAttribute('opacity', 0); tip.style.opacity = 0; });
+  box.replaceChildren(svg);
+}
+
+function plate5(){
+  const box = document.getElementById('c5');
+  const W = Math.max(300, box.clientWidth), H = 300;
+  const m = {t:20, r:16, b:44, l:38};
+  const pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const X0 = 5.8, X1 = 8.9, Y0 = 0, Y1 = 48;
+  const x = v => m.l + (v - X0) / (X1 - X0) * pw;
+  const y = v => m.t + (Y1 - v) / (Y1 - Y0) * ph;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img',
+    'aria-label':T.alt5});
+
+  for (let v = 0; v <= Y1; v += 12){
+    svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(v), y2:y(v),
+      style:'stroke:var(--grid);stroke-width:1'}));
+    svg.appendChild(txt(m.l - 7, y(v) + 3.5, v, {style:AX, 'text-anchor':'end'}));
+  }
+  for (let v = 6.0; v <= X1; v += 0.5){
+    svg.appendChild(mk('line', {x1:x(v), x2:x(v), y1:m.t + ph, y2:m.t + ph + 4,
+      style:'stroke:var(--baseline);stroke-width:1'}));
+    svg.appendChild(txt(x(v), m.t + ph + 17, F1(v), {style:AX, 'text-anchor':'middle'}));
+  }
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:m.t + ph, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1'}));
+  svg.appendChild(txt(m.l + pw / 2, m.t + ph + 34, T.axis5x, {style:AX, 'text-anchor':'middle'}));
+  svg.appendChild(txt(m.l - 7, m.t - 8, T.axis5y, {style:AX, 'text-anchor':'start'}));
+
+  const lagAt = p => LAGFIT.a + LAGFIT.b * p;
+  svg.appendChild(poly([[x(6.0), y(lagAt(6.0))], [x(8.7), y(lagAt(8.7))]], 'var(--ink-2)', 2));
+  svg.appendChild(txt(x(8.7) - 4, y(lagAt(8.7)) - 9, T.trend,
+    {style:LB + ';fill:var(--ink-2)', 'text-anchor':'end'}));
+
+  const HI = {};
+  SHAPES.forEach(s => { HI[s.date.slice(0, 7)] = s; });
+  const tip = document.getElementById('t5');
+  LAGPTS.forEach(p => {
+    const s = HI[p[3]];
+    const col = !s ? 'var(--muted)' : (s.grp === 'big' ? 'var(--cor)' : 'var(--ros)');
+    const rr = s ? 6 : 4.5;
+    const dot = mk('circle', {cx:x(p[0]), cy:y(p[1]), r:rr,
+      style:`fill:${col};fill-opacity:${s ? 1 : .5};stroke:var(--surface);stroke-width:${s ? 2.5 : 1.5}`});
+    const ht = mk('circle', {cx:x(p[0]), cy:y(p[1]), r:13, fill:'transparent',
+      style:'cursor:pointer'});
+    ht.addEventListener('pointerenter', () => {
+      tip.innerHTML = '<div class="th">' + (s ? s.id : p[3]) + '</div>' +
+        '<div class="tr"><span>' + T.cpk + '</span><b>' + F2(p[0]) + ' m</b></div>' +
+        '<div class="tr"><span>' + T.rbase + '</span><b>' + F2(p[2]) + ' m</b></div>' +
+        '<div class="tr"><span>' + T.lag + '</span><b>' + p[1] + ' d</b></div>';
+      const tw = tip.offsetWidth || 150;
+      tip.style.left = Math.max(4, Math.min(box.clientWidth - tw - 4, x(p[0]) - tw / 2)) + 'px';
+      tip.style.top = Math.max(4, y(p[1]) - 92) + 'px';
+      tip.style.opacity = 1;
+    });
+    ht.addEventListener('pointerleave', () => { tip.style.opacity = 0; });
+    svg.appendChild(dot); svg.appendChild(ht);
+  });
+  box.replaceChildren(svg);
+}
+
+function behaviourLegendsAndTables(){
+  const sw = (cls, color) => `<span><i class="swatch${cls}" style="background:${color}"></i>`;
+  document.getElementById('leg4').innerHTML =
+    sw('', 'var(--cor)') + T.lgBig + '</span>' +
+    sw('', 'var(--ros)') + T.lgBase + '</span>';
+  document.getElementById('leg5').innerHTML =
+    sw(' sq', 'var(--muted)') + T.lgAll + '</span>' +
+    sw(' sq', 'var(--cor)') + T.lgBig + '</span>' +
+    sw(' sq', 'var(--ros)') + T.lgBase + '</span>';
+
+  const t4 = ['<table><caption>' + T.cap4 + '</caption><thead><tr>' +
+    ['', T.cpk, T.crise, T.rbase, T.rcrest, T.rrise, T.gain, T.lag, T.breadth]
+      .map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>'];
+  SHAPES.forEach(s => {
+    const cr = s.base !== null ? s.r - s.base : null;
+    t4.push(`<tr><td>${s.id}</td><td>${F2(s.c)}</td><td>${F2((s.r - s.base) / s.gain)}</td>` +
+      `<td>${F2(s.base)}</td><td class="num">${F2(s.r)}</td><td>+${F2(cr)}</td>` +
+      `<td>${F2(s.gain)}</td><td>${s.lag} d</td><td>${s.breadth} d</td></tr>`);
+  });
+  t4.push('</tbody></table>');
+  document.getElementById('tv4').innerHTML = t4.join('');
+
+  const t5 = ['<table><caption>' + T.cap5 + '</caption><thead><tr><th>' + T.event +
+    '</th><th>' + T.cpk + '</th><th>' + T.rbase + '</th><th>' + T.lag +
+    '</th></tr></thead><tbody>'];
+  LAGPTS.slice().sort((a, b) => b[0] - a[0]).forEach(p => {
+    const s = HIGHLIGHT[p[3]];
+    t5.push(`<tr class="${s ? 'focus' : ''}"><td>${p[3]}</td><td class="num">${F2(p[0])}</td>` +
+      `<td>${F2(p[2])}</td><td>${p[1]} d</td></tr>`);
+  });
+  t5.push('</tbody></table>');
+  document.getElementById('tv5').innerHTML = t5.join('');
+}
+const HIGHLIGHT = {};
+SHAPES.forEach(s => { HIGHLIGHT[s.date.slice(0, 7)] = s; });
+
+function drawAll(){ plate1(); plate2(); plate3(); plate4(); plate5(); }
+legends(); behaviourLegendsAndTables(); tables(); drawAll();
 let rt;
 addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 140); });
 </script>

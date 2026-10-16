@@ -27,24 +27,43 @@ and when?
 | | |
 |---|---|
 | Rosario now | 3.35 m (alerta 5.00, evacuación 5.30) |
-| Crest | 5.16 m, band 4.80 to 5.52 |
-| Crest date | 18 Nov, broad flat crest ~10 to 23 Nov |
-| Crosses 5.00 m | 10 Nov central, 4 Nov on the fast edge |
+| Crest | 4.76 m, band 4.42 to 5.10 |
+| Crest date | 15 Nov, broad flat crest ~8 to 20 Nov |
+| Crosses 5.00 m | only at the upper edge of the band, around 9 Nov |
 
-Two independent methods: a two-variable peak regression gives 4.85 ± 0.27 m,
-an INA-anchored analogue trajectory gives 5.16 m. Both land on 18 November.
+Three independent estimators, all on 1901-2026: a two-variable peak regression
+gives 4.76 ± 0.24 m, the attenuation law gives 4.56 m, the seven base-matched
+analogues give 4.33 m. Leave-one-out over all 76 waves puts the typical error at
+0.19 m with no bias on waves of this size.
+
+### Revision, 16 Oct 2026
+
+The first version fitted on 1990-2026 and published 5.16 m, because the first API
+pull passed `timestart=1990-01-01` and that was taken as the extent of the record.
+It is not: Corrientes serves from 1901-01-02 and Rosario from 1900-01-02, 99%
+daily coverage, 76 matched waves instead of 23. The 1990s sample happened to hold
+mostly waves that started from a much higher Rosario base, which inflated the
+crest by about 0.4 m. Always pass an early `timestart` and read back what the API
+actually returns.
 
 ## Files
 
 - `scripts/rosario_forecast.py` fits the peak model and the Santa Fe transfer
   straight from the INA a5 API. Run it to refresh the statistics.
-- `scripts/build_projection.py` builds `data/projection.json`, the dataset the
-  HTML page is drawn from. Edit the `INA_ROS` / `C_PEAK` anchors when a newer
-  INA run posts, then re-run.
+- `scripts/build_projection2.py` builds `data/projection.json`, the dataset the
+  pages are drawn from, on the full record. Edit the `INA_ROS` / `C_PEAK` anchors
+  when a newer INA run posts, then re-run. Supersedes `build_projection.py`.
+- `scripts/backtest.py` catalogues all 76 waves since 1901 and cross-validates
+  the fit. Writes `data/events_1901.json`.
+- `scripts/wave_behaviour.py` compares the record waves against the base-matched
+  ones and tests lag and attenuation against peak size and starting level.
+  Writes `data/wave_shapes.json`.
 - `scripts/analyze.py` holds the first exploratory pass: cross-correlation of daily
   increments, event matching, single-variable fits. Kept for the working.
-- `data/projection.json` holds observed series, INA forecasts, projection band,
-  threshold dates, the 23 matched events.
+- `data/projection.json` holds the projection band, threshold dates and the
+  base-matched analogues.
+- `data/events_1901.json` holds all 76 matched waves since 1901.
+- `data/wave_shapes.json` holds the day-by-day trajectories behind plate 4.
 
 ## Publishing
 
