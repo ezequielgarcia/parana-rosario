@@ -1,4 +1,4 @@
-# Paraná at Rosario — crest estimate, October 2026
+# Paraná at Rosario: crest estimate, October 2026
 
 **`index.html`** is the page to publish: one self-contained file, no build step and
 no local assets. Drop it on any static host (GitHub Pages, Netlify, S3, nginx) and
@@ -27,14 +27,14 @@ an INA-anchored analogue trajectory gives 5.16 m. Both land on 18 November.
 
 ## Files
 
-- `scripts/rosario_forecast.py` — fits the peak model and the Santa Fe transfer
+- `scripts/rosario_forecast.py` fits the peak model and the Santa Fe transfer
   straight from the INA a5 API. Run it to refresh the statistics.
-- `scripts/build_projection.py` — builds `data/projection.json`, the dataset the
+- `scripts/build_projection.py` builds `data/projection.json`, the dataset the
   HTML page is drawn from. Edit the `INA_ROS` / `C_PEAK` anchors when a newer
   INA run posts, then re-run.
-- `scripts/analyze.py` — the first exploratory pass: cross-correlation of daily
+- `scripts/analyze.py` holds the first exploratory pass: cross-correlation of daily
   increments, event matching, single-variable fits. Kept for the working.
-- `data/projection.json` — observed series, INA forecasts, projection band,
+- `data/projection.json` holds observed series, INA forecasts, projection band,
   threshold dates, the 23 matched events.
 
 ## Publishing
@@ -48,12 +48,12 @@ properly. Nothing on the page phones home and there is no analytics.
 
 ## Data sources (all public, no auth)
 
-- Prefectura Naval Argentina — https://contenidosweb.prefecturanaval.gob.ar/alturas/
-- FICH-UNL CIM — http://wfich1.unl.edu.ar/cim/rios/parana/alturas (HTTP only, 443 is closed)
-- INA Alerta Hidrológico daily report —
+- Prefectura Naval Argentina: https://contenidosweb.prefecturanaval.gob.ar/alturas/
+- FICH-UNL CIM: http://wfich1.unl.edu.ar/cim/rios/parana/alturas (HTTP only, 443 is closed)
+- INA Alerta Hidrológico daily report:
   https://alerta.ina.gob.ar/ina/06-INFORMES/diario/pdf/reporte_diario_YYYY-MM-DD.pdf
-- INA numeric forecasts — https://alerta.ina.gob.ar/ina/08-PRONOSTICOS/graficos/
-- INA a5 series API — https://alerta.ina.gob.ar/a5/obs/puntual/series/<id>?timestart=&timeend=
+- INA numeric forecasts: https://alerta.ina.gob.ar/ina/08-PRONOSTICOS/graficos/
+- INA a5 series API: https://alerta.ina.gob.ar/a5/obs/puntual/series/<id>?timestart=&timeend=
   Series 19 Corrientes, 30 Santa Fe, 34 Rosario; var_id 2 is level in metres.
   Daily records back to 1990.
 

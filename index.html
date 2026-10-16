@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Paraná at Rosario — crest estimate for the October 2026 flood wave</title>
+<title>Paraná at Rosario: crest estimate for the October 2026 flood wave</title>
 <meta name="description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
 <meta name="author" content="Eze Garcia">
 <meta name="robots" content="index,follow">
@@ -456,8 +456,8 @@ const fit = c => FIT.b0 + FIT.b1*c + FIT.b2*R_BASE_NOW;
 const THRESHOLDS = [
   {lv:4.00, what:'Low islands and riverside paths go under', e:'20 Oct', c:'23 Oct', l:'28 Oct'},
   {lv:4.50, what:'Water reaches the Rosario costanera lower deck', e:'25 Oct', c:'30 Oct', l:'6 Nov'},
-  {lv:5.00, what:'Alerta', e:'4 Nov', c:'10 Nov', l:'—'},
-  {lv:5.30, what:'Evacuación', e:'10 Nov', c:'—', l:'—'}
+  {lv:5.00, what:'Alerta', e:'4 Nov', c:'10 Nov', l:'–'},
+  {lv:5.30, what:'Evacuación', e:'10 Nov', c:'–', l:'–'}
 ];
 
 const GAUGES = [
@@ -557,7 +557,7 @@ function timeChart(host, cfg){
     tip.innerHTML = '<div class="th">' + dlabel(i) + '</div>' +
       rows.map(rw => '<div class="tr"><span>' +
         (rw.color ? '<i class="dot" style="background:' + rw.color + '"></i>' : '') +
-        rw.k + '</span><b>' + (rw.v === null ? '—' : rw.v.toFixed(2) + ' m') + '</b></div>').join('');
+        rw.k + '</span><b>' + (rw.v === null ? '–' : rw.v.toFixed(2) + ' m') + '</b></div>').join('');
     const bw = box.clientWidth, tw = tip.offsetWidth || 150;
     const left = Math.max(4, Math.min(bw - tw - 4, x(i) * (box.clientWidth / W) - tw / 2));
     tip.style.left = left + 'px';

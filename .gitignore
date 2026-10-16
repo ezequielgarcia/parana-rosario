@@ -1,2 +1,6 @@
 # headless variant of index.html, published separately as a private artifact
 parana-rosario.html
+
+# prose linters pulled from EENCloud/bridge-core-tutorial (private); slopcheck.py
+# is EEN-authored, so it does not belong in this public repo
+tools/
