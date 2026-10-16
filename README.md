@@ -5,7 +5,16 @@ no local assets. Drop it on any static host (GitHub Pages, Netlify, S3, nginx) a
 it works. The only external request is the Google Fonts stylesheet; without network
 it falls back to Georgia and the system sans and still reads correctly.
 
-Live at https://ezequielgarcia.github.io/parana-rosario/
+Live in two editions:
+
+- English: https://ezequielgarcia.github.io/parana-rosario/
+- Español: https://ezequielgarcia.github.io/parana-rosario/es/
+
+`es/index.html` is a full translation, not a machine pass. It also localises what
+Argentine hydrological publications localise: decimal comma, dot thousands
+separator, Spanish month abbreviations, and dates written "16 de octubre de 2026".
+The two pages cross-link and carry `hreflang` alternates. Keep them in step: a
+change to the data constants has to land in both.
 
 ## Question
 

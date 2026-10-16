@@ -7,6 +7,9 @@
 <meta name="description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
 <meta name="author" content="Eze Garcia">
 <meta name="robots" content="index,follow">
+<link rel="alternate" hreflang="en" href="https://ezequielgarcia.github.io/parana-rosario/">
+<link rel="alternate" hreflang="es" href="https://ezequielgarcia.github.io/parana-rosario/es/">
+<link rel="alternate" hreflang="x-default" href="https://ezequielgarcia.github.io/parana-rosario/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paraná at Rosario: when the wave arrives, and how high">
 <meta property="og:description" content="How high the Paraná flood wave now at Corrientes will run at Rosario and when, from Prefectura Naval and INA gauge records back to 1990. Crest estimate 5.16 m around 18 November 2026.">
@@ -187,6 +190,9 @@ footer.colophon p{font-family:var(--font-data);font-size:.78rem;line-height:1.6;
 footer.colophon strong{color:var(--ink-2)}
 footer.colophon a{color:var(--ros);text-decoration:none}
 footer.colophon a:hover{text-decoration:underline}
+a.lang{color:var(--ros);text-decoration:none;border-bottom:1px solid transparent}
+a.lang:hover{border-bottom-color:currentColor}
+a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -204,6 +210,7 @@ footer.colophon a:hover{text-decoration:underline}
     <span>Gauges: Prefectura Naval Argentina · FICH-UNL</span>
     <span>Forecast anchor: INA, issued 13 Oct</span>
     <span>Levels are metres on each port's <em class="term">cero hidrométrico</em></span>
+    <span><a class="lang" href="es/">Leer en español</a></span>
   </p>
 </header>
 
@@ -690,13 +697,16 @@ function plate2(){
         const px = x(di(mk2.d)), py = y(mk2.v);
         svg.appendChild(mk('circle', {cx:px, cy:py, r:4,
           style:'fill:var(--surface);stroke:var(--ros);stroke-width:2'}));
-        // the crest label goes beside the dot on one line, so it clears both rules
+        // the crest label goes beside the dot on one line, so it clears both rules;
+        // it flips to the left when it would otherwise run past the plot edge
         const crest = n === 3;
-        const anchor = crest || n === 0 ? 'start' : 'middle';
         if (crest){
-          svg.appendChild(txt(px + 10, py + 4, mk2.t + ' · ' + dlabel(di(mk2.d)),
-            {style:LB + ';fill:var(--ink-2)', 'text-anchor':anchor}));
+          const label = mk2.t + ' \u00b7 ' + dlabel(di(mk2.d));
+          const flip = px + 10 + label.length * 6.4 > g.W - g.m.r;
+          svg.appendChild(txt(px + (flip ? -10 : 10), py + 4, label,
+            {style:LB + ';fill:var(--ink-2)', 'text-anchor':flip ? 'end' : 'start'}));
         } else {
+          const anchor = n === 0 ? 'start' : 'middle';
           svg.appendChild(txt(px, py + 20, mk2.t,
             {style:LB + ';fill:var(--ink-2)', 'text-anchor':anchor}));
           svg.appendChild(txt(px, py + 32, dlabel(di(mk2.d)),
