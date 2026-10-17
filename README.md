@@ -57,6 +57,50 @@ or for the disagreement between methods, so the published figure is wider.
 Travel time fitted against peak size gives 25 days with a residual sd of 8 days;
 the sixteen comparable waves ran from 3 to 37 days.
 
+### Routing: the reach is storage, not translation
+
+`scripts/basis_tests.py` and `scripts/basis_tests2.py` test three ideas against
+the 1901-2026 daily record. `scripts/build_kernel.py` fits the one that works and
+writes `data/kernel.json`.
+
+A Fourier basis is wrong for the event. Annual harmonics explain 14.5% of
+Rosario's daily variance and six harmonics only reach 15.3%. With the seasonal
+cycle removed, the periodogram of the anomaly has 0.0003 of the variance at a
+90-day period and 0.0000 at 60, 30, 14 and 7 days. A flood is one transient
+pulse, so there is nothing periodic to expand, and a periodic basis extrapolates
+periodically.
+
+A lag-and-reservoir transfer function works well:
+
+```
+Rosario = -0.368 + 0.9195 * S(Corrientes)[t-3]      S = one linear reservoir, k = 21.2 d
+R2 0.8996   residual sd 0.422 m   n = 45 544 days   centroid travel time 24.2 d
+```
+
+One reservoir beats two or more, which means maximum dispersion. Consequences:
+
+| | |
+|---|---|
+| Celerity implied | 792 km / 24.2 d = 33 km/d = 0.38 m/s |
+| A kinematic wave (c = 1.5 v, v ~ 1 m/s) | would arrive in 6 days |
+| Crest breadth, Rosario / Corrientes | 4.2 times wider |
+| Fastest 5-day rise | 0.82 m at Corrientes, 0.18 m at Rosario |
+| Attenuation of an 11-day pulse | 0.9195 * (1 - exp(-11/21.2)) = 0.37, measured 0.36 |
+
+It is therefore not a travelling wave: four times too slow and the shape is not
+conserved. The floodplain between Corrientes and Santa Fe is tens of km wide
+against a channel of one or two, and that storage sets both the delay and the
+attenuation. Applied to this wave, pure translation would put Rosario at 7.51 m,
+above the 1992 record; the storage filter says 4.94 m and the peak-to-peak
+regression says 4.76 m.
+
+The filter is not used for the published figure. It describes the whole
+hydrograph better but predicts the crest worse: MAE 0.32 m with a 0.25 m low bias
+against 0.19 m for the peak regression, because it has one input, no local
+tributaries and no term for the starting state. Transforming does not help
+either: log stage gives R2 0.884 and a discharge-like h^1.6 gives 0.897, against
+0.900 for plain stage.
+
 ### Revision, 16 Oct 2026
 
 The first version fitted on 1990-2026 and published 5.16 m, because the first API
@@ -79,12 +123,21 @@ actually returns.
 - `scripts/wave_behaviour.py` compares the record waves against the base-matched
   ones and tests lag and attenuation against peak size and starting level.
   Writes `data/wave_shapes.json`.
+- `scripts/error_budget.py` builds the five-term error budget, checks it against
+  the leave-one-out error quantiles and writes `data/error_budget.json`.
+- `scripts/basis_tests.py` and `scripts/basis_tests2.py` test the harmonic basis,
+  the periodogram of the anomaly, the lag-and-reservoir fit and three transformed
+  spaces. They print; they write no data.
+- `scripts/build_kernel.py` fits the routing filter and writes `data/kernel.json`
+  for plates 6 and 7.
 - `scripts/analyze.py` holds the first exploratory pass: cross-correlation of daily
   increments, event matching, single-variable fits. Kept for the working.
 - `data/projection.json` holds the projection band, threshold dates and the
   base-matched analogues.
 - `data/events_1901.json` holds all 76 matched waves since 1901.
 - `data/wave_shapes.json` holds the day-by-day trajectories behind plate 4.
+- `data/kernel.json` holds the fitted filter and the three tracks in plate 7.
+- `data/error_budget.json` holds the error terms and threshold probabilities.
 
 ## Publishing
 

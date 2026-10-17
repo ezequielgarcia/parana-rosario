@@ -430,6 +430,104 @@ a.lang:focus-visible{outline:2px solid var(--ros);outline-offset:2px}
   early-century event is 1905, at 8.57 m, and it is the third largest in 126 years.</p>
 </section>
 
+
+<section class="prose">
+  <h2>Why this is not a travelling wave</h2>
+  <p>It is natural to picture the flood as a bulge of water sliding down a pipe of roughly
+  constant width, arriving at Rosario in the shape it had at Corrientes, only later. The
+  channel really is fairly uniform, so the picture is reasonable. The record says it is
+  wrong, and the way it is wrong is the single most useful fact about this river.</p>
+  <p>Corrientes sits about 792 river kilometres above Rosario. The fitted travel time is 24
+  days, which works out at 33 km a day, or 0.38 m/s. Water in this reach moves at roughly
+  1 m/s, and a kinematic wave travels at about 1.5 times the water velocity, so translation
+  alone would deliver the wave in <b>six days</b>. It takes four times longer. Nor does the
+  shape survive the journey: the crest arrives 4.2 times broader than it left, and the
+  fastest five-day rise falls from 0.82 m at Corrientes to 0.18 m at Rosario.</p>
+  <p>Something is taking the water in and giving it back slowly. Between Corrientes and
+  Santa Fe the Paraná runs in a floodplain tens of kilometres wide against a main channel
+  of one or two. Water leaves the channel sideways, sits in the <em class="term">valle
+  aluvial</em>, and drains back over weeks. That is storage, not translation, and it is
+  why the answer at Rosario depends so little on the peak upstream and so much on how full
+  the lower river already is.</p>
+</section>
+
+<section class="plate" id="plate6">
+  <div class="plate-head">
+    <p class="eyebrow">Plate 6</p>
+    <h2>The reach, measured as a filter</h2>
+    <p class="sub">Fit a single linear reservoir to the whole daily record and the reach
+    gives up three numbers: a three-day dead time, a storage constant of 21.2 days, and a
+    steady gain of 0.92. This is the resulting kernel, the share of any change at
+    Corrientes that reaches Rosario on each following day. It explains 90 % of Rosario's
+    daily level from Corrientes alone, with a residual of 0.42 m.</p>
+  </div>
+  <div class="chart"><div id="c6"></div><div class="tip" id="t6"></div></div>
+  <div class="plate-foot">
+    <span>The centroid lands at day 24. One reservoir beats two or more, so the dispersion is as wide as it gets.</span>
+    <button class="tbl" data-target="tv6" aria-expanded="false">Table view</button>
+  </div>
+  <div class="scroll" id="tv6" hidden></div>
+</section>
+
+<section class="plate" id="plate7">
+  <div class="plate-head">
+    <p class="eyebrow">Plate 7</p>
+    <h2>What each picture predicts for this wave</h2>
+    <p class="sub">The same Corrientes hydrograph, put through two different ideas of what
+    the reach does, against what the river is actually doing. All three lines are metres of
+    rise above Rosario's level on 1 September, so they share one axis. Corrientes is
+    observed to 16 October, follows INA's published forecast to 27 October and then recedes
+    on the constant implied by INA's own numbers.</p>
+  </div>
+  <div class="legend" id="leg7"></div>
+  <div class="chart"><div id="c7"></div><div class="tip" id="t7"></div></div>
+  <div class="plate-foot">
+    <span>Translation says 7.51 m at Rosario. Storage says 4.94. The page says 4.76.</span>
+    <button class="tbl" data-target="tv7" aria-expanded="false">Table view</button>
+  </div>
+  <div class="scroll" id="tv7" hidden></div>
+</section>
+
+<section class="prose">
+  <p>Treated as a travelling wave, the +4.79 m rise at Corrientes would land at Rosario
+  almost intact, putting it at <b>7.51 m</b> on 26 October. That is a metre and a quarter
+  above the 1992 record of 6.27 m, and it is simply not going to happen. The storage filter
+  puts the same input at <b>4.94 m</b> on 6 November. This page's peak-to-peak regression,
+  which knows nothing about reservoirs or kernels, says <b>4.76 m</b> on 15 November. Two
+  methods built on entirely different reasoning land 0.18 m apart, and the intuitive one
+  misses by two and three quarter metres.</p>
+  <p>The filter also explains where the attenuation figure comes from. A reach with a
+  21.2-day storage constant cannot fill before a short pulse has gone past: an 11-day crest,
+  which is Corrientes' median, comes out at 0.92 × (1 − e<sup>−11/21.2</sup>) = <b>0.37</b>
+  of its height. The measured attenuation over 76 waves is 0.36. The constant that looked
+  like an empirical regularity is a consequence of the storage, and that is also why it
+  holds steady while travel time does not: changing the size of a wave barely moves the
+  storage constant, but it does change how fast the wave can push through an already full
+  channel.</p>
+  <h3>Where the sines and cosines do belong</h3>
+  <p>Fitting a Fourier series to the hydrograph itself is the wrong tool, and the record
+  says so plainly. Annual harmonics explain 14.5 % of Rosario's daily variance, and going
+  from one harmonic to six moves that to 15.3 %. Take the seasonal cycle out and the
+  periodogram of what is left has no power worth the name at any event timescale: 0.0003 of
+  the variance at 90 days, 0.0000 at 60, 30, 14 and 7. Nothing periodic is left to expand.
+  A flood is one transient pulse, a truncated sine series of a pulse rings at the flanks and
+  goes negative in the trough, and a periodic basis extrapolates periodically, which is the
+  worst possible prior for a forecast.</p>
+  <p>The frequency domain pays off on the reach rather than on the event. The annual harmonic peaks on 11 March at Corrientes and 17 April at Rosario, and
+  its amplitude falls from 0.791 m to 0.713 m. That is a 37-day phase lag and a gain of 0.90
+  at one cycle a year, measured without touching a single flood. At event frequencies the
+  gain is 0.36. The reach is a low-pass filter: it passes the slow regime nearly whole and
+  flattens anything quick. Plate 6 is that same statement written in the time domain.</p>
+  <p class="note">None of this changes the published figure. The filter is the better
+  description of the whole hydrograph but the worse predictor of the crest, missing it by 0.32 m on average
+  with a 0.25 m low bias against 0.19 m for the peak-to-peak regression, because it has one
+  input, no local tributaries and no term for the starting state. And working in a
+  transformed space does not help: refitting in log stage gives R² 0.884 and in a
+  discharge-like h<sup>1.6</sup> gives 0.897, against 0.900 for plain stage. Over a range of
+  two to seven metres this reach is close enough to linear in stage that the transforms cost
+  more than they return.</p>
+</section>
+
 <section>
   <h2>Method</h2>
   <div class="method">
@@ -1142,7 +1240,22 @@ const T = {
  "lgBig": "Four record waves",
  "lgBase": "Three from the base we are at",
  "cap4": "The seven waves in plate 4. Gain is the Rosario rise divided by the Corrientes rise. Crest breadth counts the days Rosario held within 0.25 m of its crest.",
- "cap5": "All 76 matched waves, largest Corrientes peak first. The seven highlighted rows are those in plate 4."
+ "cap5": "All 76 matched waves, largest Corrientes peak first. The seven highlighted rows are those in plate 4.",
+ "alt6": "The fitted routing kernel: the share of a change at Corrientes that reaches Rosario on each following day, decaying exponentially from a three-day dead time.",
+ "alt7": "Rosario's rise above its 1 September level under three models: pure translation, the storage filter, and the river's own observed and projected track.",
+ "axis6x": "days after the signal passes Corrientes",
+ "axis6y": "per cent of the signal delivered per day",
+ "k6half": "half delivered by day 17",
+ "k6day": "Day",
+ "k6rate": "Delivered that day",
+ "k6cum": "Delivered so far",
+ "axis7y": "Rosario rise above 1 September (m)",
+ "lgTw": "Travelling wave",
+ "lgSt": "Storage filter",
+ "lgRo": "The actual river",
+ "date": "Date",
+ "cap6": "The fitted kernel, every fifth day. The highlighted row is the day by which half the signal has reached Rosario.",
+ "cap7": "Rosario's rise above its 1 September level, every third day. Travelling wave is the Corrientes rise moved forward six days with nothing taken off it. Storage filter is one linear reservoir, k = 21.2 days. The actual river is observed to 16 October and this page's central projection after it.",
 };
 
 function plate4(){
@@ -1319,8 +1432,207 @@ function behaviourLegendsAndTables(){
 const HIGHLIGHT = {};
 SHAPES.forEach(s => { HIGHLIGHT[s.date.slice(0, 7)] = s; });
 
-function drawAll(){ plate1(); plate2(); plate3(); plate4(); plate5(); }
-legends(); behaviourLegendsAndTables(); tables(); errorTables(); drawAll();
+
+/* ---------- plates 6 and 7: routing kernel and the travelling-wave test ---------- */
+const KFIT = {k:21.2, lag:3, gain:0.9195, b0:-0.368, r2:0.8996,
+  sd:0.422, centroid:24.2, half:17, km:792, kin:6,
+  cbase:2.52, rbase:2.72};
+const KROWS = [["09-01",null,0.0,0.0,1],["09-02",null,-0.02,-0.06,1],["09-03",null,-0.03,-0.11,1],["09-04",null,-0.05,-0.17,1],["09-05",null,-0.08,-0.26,1],["09-06",null,-0.11,-0.28,1],["09-07",0.0,-0.12,-0.33,1],["09-08",-0.15,-0.12,-0.3,1],["09-09",-0.14,-0.11,-0.37,1],["09-10",0.21,-0.09,-0.43,1],["09-11",0.45,-0.08,-0.44,1],["09-12",0.64,-0.07,-0.41,1],["09-13",0.76,-0.06,-0.37,1],["09-14",0.82,-0.06,-0.24,1],["09-15",0.76,-0.06,-0.18,1],["09-16",0.62,-0.05,-0.23,1],["09-17",0.54,-0.05,-0.27,1],["09-18",0.5,-0.02,-0.19,1],["09-19",0.59,0.01,-0.26,1],["09-20",0.65,0.04,-0.27,1],["09-21",1.03,0.08,-0.27,1],["09-22",1.24,0.12,-0.25,1],["09-23",1.38,0.16,-0.26,1],["09-24",1.48,0.21,-0.11,1],["09-25",1.56,0.26,-0.05,1],["09-26",1.77,0.31,-0.07,1],["09-27",1.83,0.35,0.09,1],["09-28",1.93,0.4,0.09,1],["09-29",1.96,0.44,0.19,1],["09-30",2.0,0.47,0.21,1],["10-01",1.98,0.5,0.22,1],["10-02",1.9,0.53,0.29,1],["10-03",1.76,0.55,0.33,1],["10-04",1.77,0.57,0.37,1],["10-05",1.77,0.59,0.37,1],["10-06",1.74,0.6,0.36,1],["10-07",1.68,0.62,0.38,1],["10-08",1.58,0.64,0.41,1],["10-09",1.5,0.66,0.51,1],["10-10",1.62,0.69,0.5,1],["10-11",1.67,0.72,0.53,1],["10-12",1.8,0.76,0.57,1],["10-13",1.89,0.8,0.59,1],["10-14",1.99,0.84,0.61,1],["10-15",2.23,0.88,0.62,1],["10-16",2.4,0.94,0.63,1],["10-17",2.43,1.0,0.73,0],["10-18",2.47,1.07,0.82,0],["10-19",2.8,1.15,0.91,0],["10-20",2.98,1.23,1.01,0],["10-21",3.23,1.33,1.1,0],["10-22",3.61,1.44,1.2,0],["10-23",3.9,1.55,1.29,0],["10-24",4.2,1.65,1.39,0],["10-25",4.49,1.74,1.48,0],["10-26",4.79,1.83,1.58,0],["10-27",4.66,1.9,1.67,0],["10-28",4.52,1.96,1.69,0],["10-29",4.39,2.02,1.74,0],["10-30",4.26,2.06,1.75,0],["10-31",4.13,2.1,1.77,0],["11-01",3.99,2.14,1.79,0],["11-02",3.86,2.17,1.82,0],["11-03",3.74,2.19,1.85,0],["11-04",3.63,2.2,1.87,0],["11-05",3.52,2.21,1.88,0],["11-06",3.42,2.22,1.94,0],["11-07",3.32,2.22,1.95,0],["11-08",3.22,2.22,1.97,0],["11-09",3.13,2.22,1.97,0],["11-10",3.03,2.21,1.97,0],["11-11",2.95,2.2,1.99,0],["11-12",2.86,2.19,2.0,0],["11-13",2.78,2.17,2.01,0],["11-14",2.7,2.15,2.02,0],["11-15",2.62,2.13,2.04,0],["11-16",2.55,2.11,2.04,0],["11-17",2.47,2.08,2.03,0],["11-18",2.41,2.06,2.02,0],["11-19",2.34,2.03,2.0,0],["11-20",2.27,2.0,2.01,0],["11-21",2.21,1.97,2.0,0],["11-22",2.15,1.94,1.99,0],["11-23",2.09,1.91,1.98,0],["11-24",2.03,1.88,1.97,0],["11-25",1.98,1.85,1.96,0],["11-26",1.92,1.81,1.97,0],["11-27",1.87,1.78,1.94,0],["11-28",1.82,1.75,1.96,0],["11-29",1.78,1.71,1.96,0],["11-30",1.73,1.68,1.96,0],["12-01",1.68,1.64,1.97,0],["12-02",1.64,1.61,1.96,0],["12-03",1.6,1.57,1.9,0],["12-04",1.56,1.54,1.89,0],["12-05",1.52,1.5,1.94,0],["12-06",1.48,1.47,1.92,0],["12-07",1.44,1.44,1.85,0],["12-08",1.41,1.4,1.82,0],["12-09",1.38,1.37,1.82,0],["12-10",1.34,1.33,1.79,0],["12-11",1.31,1.3,1.79,0],["12-12",1.28,1.27,1.78,0],["12-13",1.25,1.24,1.74,0],["12-14",1.22,1.2,1.69,0],["12-15",1.19,1.17,1.69,0],["12-16",1.17,1.14,1.66,0],["12-17",1.14,1.11,1.63,0],["12-18",1.11,1.08,1.6,0],["12-19",1.09,1.05,1.55,0],["12-20",1.07,1.02,1.57,0]]
+  .map(p => ({i:di('2026-'+p[0]), tw:p[1], st:p[2], ro:p[3], obs:!!p[4]}));
+const kern = t => t < KFIT.lag ? 0 : Math.exp(-(t - KFIT.lag) / KFIT.k) / KFIT.k;
+
+function plate6(){
+  const box = document.getElementById('c6');
+  const W = Math.max(300, box.clientWidth), H = 260;
+  const m = {t:18, r:16, b:40, l:42};
+  const pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const X1 = 90, Y1 = 5.0;
+  const x = v => m.l + v / X1 * pw;
+  const y = v => m.t + (Y1 - v) / Y1 * ph;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img',
+    'aria-label':T.alt6});
+
+  for (let v = 0; v <= Y1 + 1e-9; v += 1){
+    svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(v), y2:y(v),
+      style:'stroke:var(--grid);stroke-width:1'}));
+    svg.appendChild(txt(m.l - 7, y(v) + 3.5, F1(v), {style:AX, 'text-anchor':'end'}));
+  }
+  for (let v = 0; v <= X1; v += 15){
+    svg.appendChild(mk('line', {x1:x(v), x2:x(v), y1:m.t + ph, y2:m.t + ph + 4,
+      style:'stroke:var(--baseline);stroke-width:1'}));
+    svg.appendChild(txt(x(v), m.t + ph + 17, v, {style:AX, 'text-anchor':'middle'}));
+  }
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:m.t + ph, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1'}));
+  svg.appendChild(txt(m.l + pw / 2, m.t + ph + 34, T.axis6x,
+    {style:AX, 'text-anchor':'middle'}));
+  svg.appendChild(txt(m.l - 7, m.t - 6, T.axis6y, {style:AX, 'text-anchor':'start'}));
+
+  // the half of the volume that has gone past by day KFIT.half, as relief
+  const area = (a, b2, fill) => {
+    const pts = [[x(a), y(0)]];
+    for (let t = a; t <= b2; t += 0.5) pts.push([x(t), y(kern(t) * 100)]);
+    pts.push([x(b2), y(0)]);
+    svg.appendChild(mk('polygon', {points:pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' '),
+      style:`fill:${fill};stroke:none`}));
+  };
+  area(0, KFIT.half, 'var(--band)');
+  area(KFIT.half, X1, 'var(--band-2)');
+
+  const pts = [];
+  for (let t = 0; t <= X1; t += 0.5) pts.push([x(t), y(kern(t) * 100)]);
+  svg.appendChild(poly(pts, 'var(--ros)', 2));
+
+  // one annotation only: the two-tone fill already shows where half the volume has gone
+  svg.appendChild(mk('line', {x1:x(KFIT.half), x2:x(KFIT.half), y1:m.t, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1;stroke-dasharray:3 3'}));
+  const fl6 = x(KFIT.half) + 130 > W - m.r;
+  svg.appendChild(txt(x(KFIT.half) + (fl6 ? -6 : 6), m.t + 12, T.k6half,
+    {style:AX, 'text-anchor':fl6 ? 'end' : 'start'}));
+
+  const hit = mk('rect', {x:m.l, y:m.t, width:pw, height:ph, fill:'transparent',
+    style:'cursor:crosshair'});
+  const cross = mk('line', {x1:0, x2:0, y1:m.t, y2:m.t + ph, opacity:0,
+    style:'stroke:var(--ink-2);stroke-width:1'});
+  svg.appendChild(cross); svg.appendChild(hit);
+  const tip = document.getElementById('t6');
+  hit.addEventListener('pointermove', ev => {
+    const rc = svg.getBoundingClientRect();
+    let d = Math.round((ev.clientX - rc.left) * (W / rc.width) - m.l) / pw * X1;
+    d = Math.max(0, Math.min(X1, Math.round(d)));
+    cross.setAttribute('x1', x(d)); cross.setAttribute('x2', x(d));
+    cross.setAttribute('opacity', .45);
+    let cum = 0;
+    for (let t = 0; t <= d; t++) cum += kern(t);
+    tip.innerHTML = '<div class="th">' + T.k6day + ' ' + d + '</div>' +
+      '<div class="tr"><span>' + T.k6rate + '</span><b>' + F2(kern(d) * 100) + ' %</b></div>' +
+      '<div class="tr"><span>' + T.k6cum + '</span><b>' + F1(cum * 100) + ' %</b></div>';
+    const tw = tip.offsetWidth || 150;
+    tip.style.left = Math.max(4, Math.min(box.clientWidth - tw - 4, x(d) - tw / 2)) + 'px';
+    tip.style.top = m.t + 'px';
+    tip.style.opacity = 1;
+  });
+  hit.addEventListener('pointerleave', () => {
+    cross.setAttribute('opacity', 0); tip.style.opacity = 0; });
+  box.replaceChildren(svg);
+}
+
+const KSER = [{k:'tw', c:'var(--cor)', n:'lgTw', dash:'5 4'},
+              {k:'st', c:'var(--sfe)', n:'lgSt', dash:null},
+              {k:'ro', c:'var(--ros)', n:'lgRo', dash:null}];
+
+function plate7(){
+  const box = document.getElementById('c7');
+  const W = Math.max(300, box.clientWidth), H = 330;
+  const m = {t:18, r:W < 560 ? 16 : 92, b:40, l:40};
+  const pw = W - m.l - m.r, ph = H - m.t - m.b;
+  const I0 = KROWS[0].i, I1 = KROWS[KROWS.length - 1].i;
+  const Y0 = -0.5, Y1 = 5.0;
+  const x = v => m.l + (v - I0) / (I1 - I0) * pw;
+  const y = v => m.t + (Y1 - v) / (Y1 - Y0) * ph;
+  const svg = mk('svg', {viewBox:`0 0 ${W} ${H}`, width:W, height:H, role:'img',
+    'aria-label':T.alt7});
+
+  for (let v = 0; v <= Y1 + 1e-9; v += 1){
+    svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(v), y2:y(v),
+      style:'stroke:var(--grid);stroke-width:1'}));
+    svg.appendChild(txt(m.l - 7, y(v) + 3.5, (v > 0 ? '+' : '') + F1(v),
+      {style:AX, 'text-anchor':'end'}));
+  }
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:y(0), y2:y(0),
+    style:'stroke:var(--baseline);stroke-width:1.5'}));
+  const ticks = W < 440 ? ['2026-10-01', '2026-11-01', '2026-12-01']
+    : ['2026-09-01', '2026-10-01', '2026-11-01', '2026-12-01'];
+  ticks.forEach(d => {
+    const i = di(d);
+    svg.appendChild(mk('line', {x1:x(i), x2:x(i), y1:m.t + ph, y2:m.t + ph + 4,
+      style:'stroke:var(--baseline);stroke-width:1'}));
+    svg.appendChild(txt(x(i), m.t + ph + 17, dlabel(i), {style:AX, 'text-anchor':'middle'}));
+  });
+  svg.appendChild(mk('line', {x1:m.l, x2:W - m.r, y1:m.t + ph, y2:m.t + ph,
+    style:'stroke:var(--baseline);stroke-width:1'}));
+  svg.appendChild(txt(m.l - 7, m.t - 6, T.axis7y, {style:AX, 'text-anchor':'start'}));
+
+  KSER.forEach(s => {
+    const pts = KROWS.filter(r => r[s.k] !== null).map(r => [x(r.i), y(r[s.k])]);
+    svg.appendChild(poly(pts, s.c, 2, s.dash));
+    let bi = null;
+    KROWS.forEach(r => { if (r[s.k] !== null && (bi === null || r[s.k] > bi[s.k])) bi = r; });
+    s._y = y(bi[s.k]);
+    svg.appendChild(mk('circle', {cx:x(bi.i), cy:y(bi[s.k]), r:3.5,
+      style:`fill:${s.c};stroke:var(--surface);stroke-width:2`}));
+  });
+
+  // direct labels, pushed apart where two series crest at nearly the same height
+  if (W >= 560){
+    const ord = KSER.slice().sort((a, b) => a._y - b._y);
+    ord.forEach((s, n) => { if (n && s._y - ord[n-1]._y < 15) s._y = ord[n-1]._y + 15; });
+    ord.forEach(s => svg.appendChild(txt(W - m.r + 6, s._y + 4, T[s.n],
+      {style:LB + ';fill:' + s.c})));
+  }
+
+  const hit = mk('rect', {x:m.l, y:m.t, width:pw, height:ph, fill:'transparent',
+    style:'cursor:crosshair'});
+  const cross = mk('line', {x1:0, x2:0, y1:m.t, y2:m.t + ph, opacity:0,
+    style:'stroke:var(--ink-2);stroke-width:1'});
+  svg.appendChild(cross); svg.appendChild(hit);
+  const tip = document.getElementById('t7');
+  hit.addEventListener('pointermove', ev => {
+    const rc = svg.getBoundingClientRect();
+    const px = (ev.clientX - rc.left) * (W / rc.width);
+    let i = Math.round(I0 + (px - m.l) / pw * (I1 - I0));
+    i = Math.max(I0, Math.min(I1, i));
+    const row = KROWS.find(r => r.i === i);
+    cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i));
+    cross.setAttribute('opacity', .45);
+    tip.innerHTML = '<div class="th">' + dlabel(i) + '</div>' +
+      KSER.map(s => '<div class="tr"><span><i class="dot" style="background:' + s.c +
+        '"></i>' + T[s.n] + '</span><b>' +
+        (row && row[s.k] !== null ? (row[s.k] > 0 ? '+' : '') + F2(row[s.k]) + ' m' : '–') +
+        '</b></div>').join('');
+    const tw = tip.offsetWidth || 170;
+    tip.style.left = Math.max(4, Math.min(box.clientWidth - tw - 4, x(i) - tw / 2)) + 'px';
+    tip.style.top = m.t + 'px';
+    tip.style.opacity = 1;
+  });
+  hit.addEventListener('pointerleave', () => {
+    cross.setAttribute('opacity', 0); tip.style.opacity = 0; });
+  box.replaceChildren(svg);
+}
+
+function routingLegendsAndTables(){
+  const sw = (cls, color, dash) => `<span><i class="swatch${cls}" style="background:${color}` +
+    (dash ? ';opacity:.75' : '') + `"></i>`;
+  document.getElementById('leg7').innerHTML = KSER.map(s =>
+    sw('', s.c, s.dash) + T[s.n] + '</span>').join('');
+
+  const t6 = ['<table><caption>' + T.cap6 + '</caption><thead><tr><th>' + T.k6day +
+    '</th><th>' + T.k6rate + '</th><th>' + T.k6cum + '</th></tr></thead><tbody>'];
+  let cum = 0, prev = 0;
+  for (let d = 0; d <= 90; d++){
+    cum += kern(d);
+    if (d % 5 === 0) t6.push(`<tr class="${d === KFIT.half ? 'focus' : ''}"><td>${d}</td>` +
+      `<td class="num">${F2(kern(d) * 100)} %</td><td>${F1(cum * 100)} %</td></tr>`);
+  }
+  t6.push('</tbody></table>');
+  document.getElementById('tv6').innerHTML = t6.join('');
+
+  const t7 = ['<table><caption>' + T.cap7 + '</caption><thead><tr><th>' + T.date +
+    '</th>' + KSER.map(s => '<th>' + T[s.n] + '</th>').join('') +
+    '</tr></thead><tbody>'];
+  KROWS.forEach(r => {
+    if (r.i % 3) return;
+    t7.push(`<tr><td>${dlabel(r.i)}</td>` + KSER.map(s =>
+      `<td${s.k === 'ro' ? ' class="num"' : ''}>` +
+      (r[s.k] === null ? '–' : (r[s.k] > 0 ? '+' : '') + F2(r[s.k])) + '</td>').join('') + '</tr>');
+  });
+  t7.push('</tbody></table>');
+  document.getElementById('tv7').innerHTML = t7.join('');
+}
+
+function drawAll(){ plate1(); plate2(); plate3(); plate4(); plate5(); plate6(); plate7(); }
+legends(); behaviourLegendsAndTables(); routingLegendsAndTables(); tables();
+errorTables(); drawAll();
 let rt;
 addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawAll, 140); });
 </script>
