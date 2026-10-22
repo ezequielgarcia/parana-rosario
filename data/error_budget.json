@@ -1,29 +1,29 @@
 {
- "pred": 4.76,
- "sd": 0.328,
+ "pred": 5.22,
+ "sd": 0.311,
  "terms": {
   "wave-to-wave scatter about the fit": 0.241,
-  "uncertainty in the fitted coefficients": 0.058,
+  "uncertainty in the fitted coefficients": 0.049,
   "Corrientes peak forecast (sd 0.24 m)": 0.121,
-  "starting base at Rosario": 0.021,
-  "spread between the three estimators": 0.176
+  "starting base at Rosario (sd 0.22 m)": 0.092,
+  "spread between the three estimators": 0.113
  },
  "bands": {
   "68": [
-   4.44,
-   5.09
+   4.91,
+   5.53
   ],
   "80": [
-   4.34,
-   5.19
+   4.82,
+   5.62
   ],
   "90": [
-   4.22,
-   5.31
+   4.7,
+   5.74
   ],
   "95": [
-   4.11,
-   5.42
+   4.6,
+   5.84
   ]
  },
  "loo": {
@@ -34,13 +34,13 @@
  "lag": {
   "median": 27.0,
   "sd": 8.1,
-  "at_c": 25.2
+  "at_c": 24.0
  },
  "exceed": {
-  "4.0": 99.0,
-  "4.5": 79.0,
-  "5.0": 23.6,
-  "5.3": 5.1,
-  "6.0": 0.0
+  "4.0": 100.0,
+  "4.5": 99.0,
+  "5.0": 75.9,
+  "5.3": 39.6,
+  "6.0": 0.6
  }
 }

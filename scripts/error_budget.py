@@ -49,8 +49,11 @@ B, SD, RES = fit(EV)
 n, k = len(EV), 3
 XTXI = inverse(xtx(design(EV)))
 
-C_MID, C_LO, C_HI = 7.31, 6.75, 7.55   # INA's own band on the Corrientes peak
-BASE = 3.35
+# 22 Oct: the governing Corrientes peak is INA's forecast second crest on
+# 3 Nov, not the 7.38 m observed on 22 Oct, so the input term is a forecast
+# again and so is the base, Rosario five days ahead of that peak.
+C_MID, C_LO, C_HI = 7.58, 7.00, 7.80   # INA's own band on the Corrientes peak
+BASE, BASE_LO, BASE_HI = 4.12, 3.71, 4.44
 x0 = [1.0, C_MID, BASE]
 
 pred = sum(B[i]*x0[i] for i in range(k))
@@ -69,18 +72,18 @@ print(f"  prediction se      {se_fit:.3f} m   -> central estimate {pred:.2f} m\n
 # ---- term 2: the Corrientes peak is a forecast, not an observation
 sd_c = (C_HI - C_LO)/(2*1.645)   # INA publishes a band; read it as ~90%
 se_input = abs(B[1])*sd_c
-# ---- term 3: the starting base five days before the peak is itself a few days out
-sd_base = 0.05
+# ---- term 3: the base five days before the peak is now a forecast too
+sd_base = (BASE_HI - BASE_LO)/(2*1.645)
 se_base = abs(B[2])*sd_base
 # ---- term 4: spread between the three independent estimators (model form)
-ESTS = [4.76, 4.56, 4.33]
+ESTS = [5.22, 5.30, 5.03]
 se_model = st.pstdev(ESTS)
 
 print("error budget, one standard deviation each:")
 rows = [("wave-to-wave scatter about the fit", se_resid),
         ("uncertainty in the fitted coefficients", se_param),
         (f"Corrientes peak forecast (sd {sd_c:.2f} m)", se_input),
-        ("starting base at Rosario", se_base),
+        (f"starting base at Rosario (sd {sd_base:.2f} m)", se_base),
         ("spread between the three estimators", se_model)]
 for lab, v in rows: print(f"  {lab:42s} {v:.3f} m")
 tot = sum(v*v for _, v in rows)**0.5
@@ -126,7 +129,7 @@ sl = sorted(lags)
 print(f"  all 76 waves: median {st.median(lags):.0f} d, "
       f"p10 {sl[int(.1*len(sl))]} d, p90 {sl[int(.9*len(sl))]} d, range {sl[0]} to {sl[-1]}")
 print(f"  lag = {Bl[0]:.1f} {Bl[1]:+.2f}*C_peak, residual sd {sdl:.1f} d"
-      f"  -> at C 7.31: {Bl[0]+Bl[1]*C_MID:.0f} +/- {sdl:.0f} d")
+      f"  -> at C {C_MID:.2f}: {Bl[0]+Bl[1]*C_MID:.0f} +/- {sdl:.0f} d")
 big_l = sorted(e['lag'] for e in EV if e['c'] >= 7.2)
 print(f"  the {len(big_l)} waves of this class: median {st.median(big_l):.0f} d, "
       f"range {big_l[0]} to {big_l[-1]} d")

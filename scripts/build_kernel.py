@@ -66,26 +66,35 @@ print(f"fitted: k={K:.1f} d, lag={TAU} d, gain={B1:.4f}, intercept={B0:+.3f}")
 print(f"        R2 {R2:.4f}, residual sd {SD:.3f} m")
 print(f"        centroid travel time {TAU + K:.1f} d")
 
-# ---- the 2026 wave: observed, INA to 27 Oct, then a tapering recession
+# ---- the 2026 wave: observed, INA's published track, then a tapering recession
 D0 = dt.date(2026, 9, 1)
 i0 = (D0 - days[0]).days
-obs_last = (dt.date(2026, 10, 16) - days[0]).days
-ina = {dt.date(2026,10,20): 7.31, dt.date(2026,10,27): 6.38}
+obs_last = (dt.date(2026, 10, 22) - days[0]).days
+# INA's 20 October run: a dip to 7.14 m on 27 Oct, then a second and higher
+# Iguazu-driven crest of 7.58 m on 3 November
+INA_C = [(dt.date(2026,10,27), 7.14), (dt.date(2026,11,3), 7.58)]
 CMEAN = 2.90                              # October-November seasonal low
-# recession constant matched to INA's own 20 to 27 October decline
-KC = -7.0/math.log((6.38-CMEAN)/(7.31-CMEAN))
-print(f"        Corrientes recession constant from INA's own slope: {KC:.1f} d")
+# recession constant from the record itself: the median decay over the 30 days
+# after each of the 76 catalogued Corrientes peaks, rather than one INA slope
+decs = []
+for e in json.load(open('data/events_1901.json')):
+    i = (dt.date.fromisoformat(e['d']) - days[0]).days
+    a, b = c[i], c[i+30] if i+30 < len(c) else None
+    if b is None or a is None or b <= CMEAN or a <= CMEAN or b >= a: continue
+    decs.append(-30.0/math.log((b-CMEAN)/(a-CMEAN)))
+KC = st.median(decs)
+print(f"        Corrientes recession constant, median of {len(decs)} "
+      f"catalogued peaks: {KC:.1f} d")
 
 ext = c[:obs_last+1]
 d = days[obs_last]
+anchors = [(days[obs_last], c[obs_last])] + INA_C
 while d < dt.date(2026, 12, 31):
     d += dt.timedelta(1)
-    if d <= dt.date(2026,10,20):
-        a = (d - days[obs_last]).days / (dt.date(2026,10,20) - days[obs_last]).days
-        ext.append(c[obs_last] + a*(7.31 - c[obs_last]))
-    elif d <= dt.date(2026,10,27):
-        a = (d - dt.date(2026,10,20)).days / 7
-        ext.append(7.31 + a*(6.38 - 7.31))
+    seg = next(((a, b) for a, b in zip(anchors, anchors[1:]) if a[0] < d <= b[0]), None)
+    if seg:
+        (da, va), (db, vb) = seg
+        ext.append(va + (vb-va)*(d-da).days/(db-da).days)
     else:
         ext.append(CMEAN + (ext[-1]-CMEAN)*math.exp(-1.0/KC))
 EDAYS = [days[0] + dt.timedelta(t) for t in range(len(ext))]
@@ -121,7 +130,7 @@ print(f"    storage filter, k={K:.0f} d                    : {max(sto):.2f}")
 print(f"    the page's projection                        : "
       f"{max(x['ro'] for x in rows if x['ro'] is not None):.2f}")
 kd = [x['d'] for x in rows if x['st'] == max(sto)][0]
-print(f"    storage filter crests {kd}, page says 2026-11-15")
+print(f"    storage filter crests {kd}, page says 2026-11-29")
 
 kern = [{'t': t, 'w': round(math.exp(-(t-TAU)/K)/K if t >= TAU else 0.0, 5)}
         for t in range(0, 121)]

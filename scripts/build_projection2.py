@@ -25,9 +25,13 @@ r = [R.get(d) for d in days]
 idx = {d: i for i, d in enumerate(days)}
 ev = json.load(open('data/events_1901.json'))
 
-C_PEAK, C_PEAK_DATE, R_NOW = 7.31, dt.date(2026, 10, 20), 3.35
-ANALOGUES = [e for e in ev if e['base'] < 3.75 and e['c'] >= 6.6]
-print(f"base-matched analogues (base < 3.75 m, peak >= 6.60 m): {len(ANALOGUES)}")
+# 22 Oct: Corrientes crested at 7.38 on 22 Oct, but INA's 20 Oct run puts a
+# second and higher Iguazu-driven peak at 7.58 on 3 Nov. The catalogue merges
+# peaks less than 45 days apart and keeps the higher, so that one governs, and
+# the base is Rosario five days before it rather than five days before 22 Oct.
+C_PEAK, C_PEAK_DATE, R_NOW = 7.58, dt.date(2026, 11, 3), 3.54
+ANALOGUES = [e for e in ev if 3.75 <= e['base'] <= 4.60 and e['c'] >= 7.0]
+print(f"base-matched analogues (base 3.75 to 4.60 m, peak >= 7.00 m): {len(ANALOGUES)}")
 for e in sorted(ANALOGUES, key=lambda x: x['d']):
     print(f"   {e['d']}  peak {e['c']:.2f}  base {e['base']:.2f}  crest {e['r']:.2f}"
           f"  rise {e['r']-e['base']:+.2f}  lag {e['lag']}d")
@@ -48,14 +52,17 @@ print(f"analogue lag: median {st.median(LAGS):.0f} d  (p25 {LAGS[len(LAGS)//4]},
 print(f"analogue rise: median {st.median([e['r']-e['base'] for e in ANALOGUES]):+.2f} m")
 
 INA_ROS = {dt.date(2026,10,16): (3.35,3.35,3.35),
-           dt.date(2026,10,20): (3.40,3.73,4.20),
-           dt.date(2026,10,27): (3.90,4.39,4.70)}
-LAST_INA = dt.date(2026,10,27)
+           dt.date(2026,10,18): (3.42,3.42,3.42),
+           dt.date(2026,10,20): (3.49,3.49,3.49),
+           dt.date(2026,10,22): (3.54,3.54,3.54),
+           dt.date(2026,10,27): (3.60,3.95,4.30),
+           dt.date(2026,11,3):  (4.00,4.56,4.80)}
+LAST_INA = dt.date(2026,11,3)
 ANCHOR = INA_ROS[LAST_INA][1]
 k_anchor = (LAST_INA - C_PEAK_DATE).days
 
 # target crest from the cross-validated fit, and the span the three methods cover
-FIT_CREST, FIT_SD = 4.76, 0.24
+FIT_CREST, FIT_SD = 5.22, 0.24
 out, d = [], dt.date(2026,10,16)
 while d <= dt.date(2026,12,20):
     k = (d - C_PEAK_DATE).days
@@ -96,7 +103,7 @@ print(f"\ncrest {crest['mid']:.2f} m on {crest['date']}  band {crest['lo']:.2f} 
 print(f"peak of the upper edge: {max(p['hi'] for p in out):.2f}")
 for t, v in th.items(): print(' ', t, v)
 
-json.dump({'generated':'2026-10-16','basis':'INA a5 series 19/34, 1901-2026, 76 matched events',
+json.dump({'generated':'2026-10-22','basis':'INA a5 series 19/34, 1901-2026, 76 matched events',
            'crest':{'date':crest['date'],'mid':crest['mid'],'lo':crest['lo'],
                     'hi':round(max(p['hi'] for p in out),2)},
            'projection':out,'thresholds':th,

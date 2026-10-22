@@ -22,19 +22,27 @@ A flood wave from rain on the unregulated upper Paraná (above Itaipú) and the
 Iguazú reached Corrientes in mid-October 2026. How high will it run at Rosario,
 and when?
 
-## Answer as of 16 Oct 2026
+## Answer as of 22 Oct 2026
 
 | | |
 |---|---|
-| Rosario now | 3.35 m (alerta 5.00, evacuación 5.30) |
-| Crest | 4.76 ± 0.33 m (68%); 4.22 to 5.31 at 90% |
-| Crest date | 15 Nov ± 8 d, broad flat crest ~8 to 20 Nov |
-| Reaches 5.00 m | 24% chance; 5.30 m is 5% |
+| Rosario now | 3.54 m (alerta 5.00, evacuación 5.30) |
+| Crest | 5.22 ± 0.31 m (68%); 4.70 to 5.74 at 90% |
+| Crest date | 29 Nov ± 8 d, broad flat crest ~20 Nov to 10 Dec |
+| Reaches 5.00 m | 76% chance; 5.30 m is 40% |
 
 Three independent estimators, all on 1901-2026: a two-variable peak regression
-gives 4.76 m, the attenuation law gives 4.56 m, the seven base-matched analogues
-give 4.33 m. Leave-one-out over all 76 waves puts the typical error at 0.19 m
+gives 5.22 m, the attenuation law gives 5.30 m, the twelve base-matched analogues
+give 5.03 m. Leave-one-out over all 76 waves puts the typical error at 0.19 m
 with no bias on waves of this size.
+
+Corrientes crested at 7.38 m on 22 October against a forecast of 7.31, so the
+upstream input is now a measurement. The answer moved up 0.46 m anyway,
+because INA's 20 October run puts a second and higher Corrientes crest at 7.58 m
+on 3 November, fed by the Iguazú, which reached 28.30 m and rose 0.90 m in a day.
+The event catalogue merges Corrientes peaks less than 45 days apart and keeps the
+taller one, so the governing peak is now 3 November and the base term is Rosario
+on 29 October rather than 17 October. Both inputs are forecasts again.
 
 ### Error budget
 
@@ -44,18 +52,23 @@ One standard deviation each, combined in quadrature because they are independent
 | Term | sigma |
 |---|---|
 | wave-to-wave scatter about the fit | 0.241 m |
-| uncertainty in the fitted coefficients | 0.058 m |
+| uncertainty in the fitted coefficients | 0.049 m |
 | INA's own range on the Corrientes peak, through the 0.499 slope | 0.121 m |
-| starting base at Rosario | 0.021 m |
-| spread between the three estimators | 0.176 m |
-| **combined** | **0.328 m** |
+| starting base at Rosario, itself a forecast | 0.092 m |
+| spread between the three estimators | 0.113 m |
+| **combined** | **0.311 m** |
 
 The regression alone gives a prediction standard error of 0.25 m, which is what
 the leave-one-out backtest reproduces (sd 0.25 m, central 90% of errors -0.28 to
 +0.47 m). The backtest cannot charge for the forecast error on the upstream peak
 or for the disagreement between methods, so the published figure is wider.
-Travel time fitted against peak size gives 25 days with a residual sd of 8 days;
+Travel time fitted against peak size gives 24 days with a residual sd of 8 days;
 the sixteen comparable waves ran from 3 to 37 days.
+
+The budget barely moved between 16 and 22 October, by coincidence. Closer
+agreement between the three methods took the last term from 0.176 to 0.113 m,
+while the base going back to being a forecast took that term from 0.021 to
+0.092 m. The two nearly cancel.
 
 ### Routing: the reach is storage, not translation
 
@@ -90,9 +103,12 @@ One reservoir beats two or more, which means maximum dispersion. Consequences:
 It is therefore not a travelling wave: four times too slow and the shape is not
 conserved. The floodplain between Corrientes and Santa Fe is tens of km wide
 against a channel of one or two, and that storage sets both the delay and the
-attenuation. Applied to this wave, pure translation would put Rosario at 7.51 m,
-above the 1992 record; the storage filter says 4.94 m and the peak-to-peak
-regression says 4.76 m.
+attenuation. Applied to this wave, pure translation would put Rosario at 7.78 m,
+above the 1992 record; the storage filter says 5.82 m and the peak-to-peak
+regression says 5.22 m. The filter and the regression were 0.18 m apart on the
+single-peak version of this wave and are 0.60 m apart on the double-peak one:
+Corrientes now stays above 7 m for a fortnight, and a 21-day reservoir has time
+to fill behind a pulse that wide.
 
 The filter is not used for the published figure. It describes the whole
 hydrograph better but predicts the crest worse: MAE 0.32 m with a 0.25 m low bias
@@ -110,6 +126,19 @@ daily coverage, 76 matched waves instead of 23. The 1990s sample happened to hol
 mostly waves that started from a much higher Rosario base, which inflated the
 crest by about 0.4 m. Always pass an early `timestart` and read back what the API
 actually returns.
+
+### Revision, 22 Oct 2026
+
+Re-anchored on INA's 20 October run, which superseded the 13 October one the
+first version cited. The Corrientes forecast gained a second crest and Rosario's
+27 October figure fell from 4.39 m to 3.95 m, matching a river that has risen
+0.035 m a day against the 0.095 that first track implied. `build_kernel.py` also
+stopped taking its Corrientes recession constant from one INA slope, which gave
+29.6 days, and now takes the median decay over the 30 days after each of the 76
+catalogued peaks, which gives 51.2 days.
+
+Santa Fe's forecast CSV is served as `santa_fe_prono.csv`; the `santafe_prono.csv`
+spelling that worked earlier now 404s.
 
 ## Files
 
